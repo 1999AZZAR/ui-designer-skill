@@ -1,0 +1,65 @@
+---
+name: ui-designer
+description: Design beautiful, minimalist, and modern user interfaces following Material You, Minimalism, and Glassmorphism principles. Use when creating UI mockups, defining harmonic color palettes, component theming (Light/Dark), accessibility audits (WCAG), and planning architectures with Tailwind CSS and Font Awesome.
+---
+
+# UI Designer Skill
+
+Expert design guidance for creating aesthetically pleasing, user-centric interfaces. This skill focuses on the visual and structural design intent before and during implementation.
+
+## Core Capabilities
+
+### 1. Color Palette Generation
+Generate cohesive and harmonic color palettes tailored to the project's vibe.
+- **Deliverables:** HEX codes, Tailwind config extensions, and CSS variables.
+- **Palettes:** Default to high-end pastels, dark luxury, or tonal Material You sets.
+
+### 2. Component Theming
+Establish robust theme systems (Light/Dark) through consistent design tokens.
+- Define `--bg`, `--text`, `--accent`, and `--border` variables.
+- Ensure unified states (hover, focus, active) across all UI elements.
+
+### 3. Accessibility Audits
+Evaluate and refine interfaces for maximum inclusivity and compliance.
+- **Focus:** WCAG AA/AAA contrast ratios, semantic HTML, and intuitive navigation.
+- **Guidance:** ARIA attributes, focus ring management, and screen-reader friendliness.
+
+## Core Design Languages
+
+### 1. Material You (M3)
+- **Key traits:** Large rounded corners, tonal color palettes, expressive typography.
+- **Reference:** [material-you.md](references/material-you.md)
+
+### 2. Minimalism
+- **Key traits:** Generous padding, typography-driven hierarchy, neutral palettes.
+- **Reference:** [minimalism.md](references/minimalism.md)
+
+### 3. Glassmorphism
+- **Key traits:** Backdrop blur, thin borders, vibrant background gradients.
+- **Reference:** [glassmorphism.md](references/glassmorphism.md)
+
+## Automation: Cursor Integration
+
+This skill can automatically update your project's `.cursorrules` to keep the AI aligned with your design goals.
+
+### `apply_ui_rules.py`
+Run this script to append design rules to your current directory's `.cursorrules`.
+
+```bash
+python ~/.gemini/skills/ui-designer/scripts/apply_ui_rules.py --style [material|minimal|glass] --palette [pastel|dark|vibrant]
+```
+
+## Workflows
+
+### 1. Design Conception
+When starting a new feature, ask for:
+- "Primary design language? (Material You, Minimalism, Glassmorphism)"
+- "Color vibe? (Pastel, Dark, High-Contrast)"
+
+### 2. Component Architecture
+Plan the HTML/React structure with Tailwind classes. Focus on Grid/Flex layouts and responsiveness.
+
+## Best Practices
+- **Consistency:** Stick to one design language per project.
+- **Accessibility:** Ensure enough contrast for text.
+- **Azzar's Rule:** "Just enough engineering to get it done well." (Wong edan mah ajaib).
