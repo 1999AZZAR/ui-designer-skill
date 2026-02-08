@@ -3,7 +3,7 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser(description="Apply UI design rules to .cursorrules")
-    parser.add_argument("--style", choices=["material", "minimal", "glass"], default="minimal", help="The design language to use.")
+    parser.add_argument("--style", choices=["material", "minimal", "glass", "m3-pastel"], default="minimal", help="The design language to use.")
     parser.add_argument("--palette", choices=["pastel", "dark", "vibrant"], default="pastel", help="The color palette preference.")
     args = parser.parse_args()
 
@@ -26,7 +26,12 @@ def main():
 - High contrast for readability.",
         "glass": "- Use backdrop-blur-md/lg.
 - Semi-transparent backgrounds (bg-white/20).
-- Subtle white borders (border-white/10)."
+- Subtle white borders (border-white/10).",
+        "m3-pastel": """- **M3 Pastel Glass (Hybrid)**
+- **Shape**: Large rounded corners (28px/rounded-3xl).
+- **Interaction**: Morph to sharper corners (12px) on hover + Lift + Glow.
+- **Palette**: Pastel Blue (#D1E4FF) & Deep Blue (#003258).
+- **Glass**: Use `bg-white/5` + `backdrop-blur-2xl`."""
     }
 
     palette_rules = {
