@@ -50,14 +50,14 @@ This skill can automatically update your project's `.cursorrules` to keep the AI
 Run this script to append design rules to your current directory's `.cursorrules`.
 
 ```bash
-python ~/.gemini/skills/ui-designer/scripts/apply_ui_rules.py --style [material|minimal|glass] --palette [pastel|dark|vibrant]
+python ~/.gemini/skills/ui-designer/scripts/apply_ui_rules.py --style [material|minimal|glass|m3-pastel] --palette [pastel|dark|vibrant]
 ```
 
 ## Workflows
 
 ### 1. Design Conception
 When starting a new feature, ask for:
-- "Primary design language? (Material You, Minimalism, Glassmorphism)"
+- "Primary design language? (Material You, Minimalism, Glassmorphism, M3 Pastel Glass)"
 - "Color vibe? (Pastel, Dark, High-Contrast)"
 
 ### 2. Component Architecture
