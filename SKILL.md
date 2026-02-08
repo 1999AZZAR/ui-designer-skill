@@ -38,6 +38,51 @@ Evaluate and refine interfaces for maximum inclusivity and compliance.
 - **Key traits:** Backdrop blur, thin borders, vibrant background gradients.
 - **Reference:** [glassmorphism.md](references/glassmorphism.md)
 
+## 🌟 Signature Design: M3 Pastel Glass (Hybrid)
+
+Use this design system for modern dashboards (like Glass Gallery Hub). It combines Material You shapes with Glassmorphism depth.
+
+### CSS Variables (Pastel Blue Theme)
+```css
+:root {
+    /* M3 Tonal Palette */
+    --md-sys-color-primary: #D1E4FF;
+    --md-sys-color-on-primary: #003258;
+    --md-sys-color-primary-container: #00497D;
+    --md-sys-color-on-primary-container: #D1E4FF;
+    --md-sys-color-secondary-container: #3E4759;
+    --md-sys-color-on-secondary-container: #D7E3F7;
+    --md-sys-color-surface: #1A1C1E;
+    
+    --m3-tertiary: #F7D8FF; /* Pastel Purple */
+    --m3-on-tertiary: #550066;
+}
+```
+
+### The "M3 Tile" Component
+A hybrid card that morphs shape on hover.
+
+```css
+.m3-tile {
+    transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+    border-radius: 28px; /* M3 Large Corner */
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.m3-tile:hover {
+    border-radius: 12px; /* Morph to Metro-ish sharp */
+    transform: translateY(-4px);
+    filter: brightness(1.1);
+    z-index: 10;
+}
+```
+
 ## Automation: Cursor Integration
 
 This skill can automatically update your project's `.cursorrules` to keep the AI aligned with your design goals.
