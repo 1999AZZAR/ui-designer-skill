@@ -50,6 +50,10 @@ Evaluate and refine interfaces for maximum inclusivity and compliance.
 - **Key traits:** Pastel Blue/Deep Blue, 28px corners, morphing hover effects.
 - **Reference:** [m3-pastel-glass.md](references/m3-pastel-glass.md)
 
+### 7. Neo-M3 Hybrid (Wired/Verge Style)
+- **Key traits:** Wired/Verge inspired high-contrast, 3px solid black borders, hard shadows (6px+), 24px rounded corners, tonal pastel accents.
+- **Reference:** [neo-m3-hybrid.md](references/neo-m3-hybrid.md)
+
 ## Automation: Cursor Integration
 
 This skill can automatically update your project's `.cursorrules` to keep the AI aligned with your design goals.
@@ -58,14 +62,14 @@ This skill can automatically update your project's `.cursorrules` to keep the AI
 Run this script to append design rules to your current directory's .cursorrules.
 
 ```bash
-python ~/.gemini/skills/ui-designer/scripts/apply_ui_rules.py --style [material|minimal|glass|neo-brutalism|claymorphism|m3-pastel] --palette [pastel|dark|vibrant]
+python ~/.gemini/skills/ui-designer/scripts/apply_ui_rules.py --style [material|minimal|glass|neo-brutalism|claymorphism|m3-pastel|neo-m3] --palette [pastel|dark|vibrant]
 ```
 
 ## Workflows
 
 ### 1. Design Conception
 When starting a new feature, ask for:
-- Primary design language? (Material You, Minimalism, Glassmorphism, Neo-Brutalism, Claymorphism, M3 Pastel Glass)
+- Primary design language? (Material You, Minimalism, Glassmorphism, Neo-Brutalism, Claymorphism, M3 Pastel Glass, Neo-M3 Hybrid)
 - Color vibe? (Pastel, Dark, High-Contrast)
 
 ### 2. Component Architecture
