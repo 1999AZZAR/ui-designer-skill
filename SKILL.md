@@ -1,6 +1,6 @@
 ---
 name: ui-designer
-description: Design beautiful, minimalist, and modern user interfaces following Material You, Minimalism, and Glassmorphism principles. Use when creating UI mockups, defining harmonic color palettes, component theming (Light/Dark), accessibility audits (WCAG), and planning architectures with Tailwind CSS and Font Awesome.
+description: Design beautiful interfaces using Material You, Minimalism, Glassmorphism, Neo-Brutalism, and Claymorphism. Expert in Tailwind CSS, color harmonics, component theming, and accessibility (WCAG).
 ---
 
 # UI Designer Skill
@@ -11,18 +11,18 @@ Expert design guidance for creating aesthetically pleasing, user-centric interfa
 
 ### 1. Color Palette Generation
 Generate cohesive and harmonic color palettes tailored to the project's vibe.
-- **Deliverables:** HEX codes, Tailwind config extensions, and CSS variables.
-- **Palettes:** Default to high-end pastels, dark luxury, or tonal Material You sets.
+- Deliverables: HEX codes, Tailwind config extensions, and CSS variables.
+- Palettes: Default to high-end pastels, dark luxury, or tonal Material You sets.
 
 ### 2. Component Theming
 Establish robust theme systems (Light/Dark) through consistent design tokens.
-- Define `--bg`, `--text`, `--accent`, and `--border` variables.
+- Define --bg, --text, --accent, and --border variables.
 - Ensure unified states (hover, focus, active) across all UI elements.
 
 ### 3. Accessibility Audits
 Evaluate and refine interfaces for maximum inclusivity and compliance.
-- **Focus:** WCAG AA/AAA contrast ratios, semantic HTML, and intuitive navigation.
-- **Guidance:** ARIA attributes, focus ring management, and screen-reader friendliness.
+- Focus: WCAG AA/AAA contrast ratios, semantic HTML, and intuitive navigation.
+- Guidance: ARIA attributes, focus ring management, and screen-reader friendliness.
 
 ## Core Design Languages
 
@@ -38,7 +38,15 @@ Evaluate and refine interfaces for maximum inclusivity and compliance.
 - **Key traits:** Backdrop blur, thin borders, vibrant background gradients.
 - **Reference:** [glassmorphism.md](references/glassmorphism.md)
 
-### 4. M3 Pastel Glass (Hybrid)
+### 4. Neo-Brutalism
+- **Key traits:** Thick black borders, hard shadows, vibrant clashing colors, bold typography.
+- **Reference:** [neo-brutalism.md](references/neo-brutalism.md)
+
+### 5. Claymorphism
+- **Key traits:** Soft 3D shapes, double inner shadows, large border radius, playful pastels.
+- **Reference:** [claymorphism.md](references/claymorphism.md)
+
+### 6. M3 Pastel Glass (Hybrid)
 - **Key traits:** Pastel Blue/Deep Blue, 28px corners, morphing hover effects.
 - **Reference:** [m3-pastel-glass.md](references/m3-pastel-glass.md)
 
@@ -47,18 +55,18 @@ Evaluate and refine interfaces for maximum inclusivity and compliance.
 This skill can automatically update your project's `.cursorrules` to keep the AI aligned with your design goals.
 
 ### `apply_ui_rules.py`
-Run this script to append design rules to your current directory's `.cursorrules`.
+Run this script to append design rules to your current directory's .cursorrules.
 
 ```bash
-python ~/.gemini/skills/ui-designer/scripts/apply_ui_rules.py --style [material|minimal|glass|m3-pastel] --palette [pastel|dark|vibrant]
+python ~/.gemini/skills/ui-designer/scripts/apply_ui_rules.py --style [material|minimal|glass|neo-brutalism|claymorphism|m3-pastel] --palette [pastel|dark|vibrant]
 ```
 
 ## Workflows
 
 ### 1. Design Conception
 When starting a new feature, ask for:
-- "Primary design language? (Material You, Minimalism, Glassmorphism, M3 Pastel Glass)"
-- "Color vibe? (Pastel, Dark, High-Contrast)"
+- Primary design language? (Material You, Minimalism, Glassmorphism, Neo-Brutalism, Claymorphism, M3 Pastel Glass)
+- Color vibe? (Pastel, Dark, High-Contrast)
 
 ### 2. Component Architecture
 Plan the HTML/React structure with Tailwind classes. Focus on Grid/Flex layouts and responsiveness.

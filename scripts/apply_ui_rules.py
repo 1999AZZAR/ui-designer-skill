@@ -3,7 +3,7 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser(description="Apply UI design rules to .cursorrules")
-    parser.add_argument("--style", choices=["material", "minimal", "glass", "m3-pastel"], default="minimal", help="The design language to use.")
+    parser.add_argument("--style", choices=["material", "minimal", "glass", "m3-pastel", "neo-brutalism", "claymorphism"], default="minimal", help="The design language to use.")
     parser.add_argument("--palette", choices=["pastel", "dark", "vibrant"], default="pastel", help="The color palette preference.")
     args = parser.parse_args()
 
@@ -18,29 +18,34 @@ def main():
 """
 
     style_rules = {
-        "material": "- Use Material You (M3) principles.
+        "material": """- Use Material You (M3) principles.
 - Large rounded corners (rounded-3xl).
-- Tonal palettes and subtle elevation.",
-        "minimal": "- Focus on typography and whitespace.
+- Tonal palettes and subtle elevation.""",
+        "minimal": """- Focus on typography and whitespace.
 - Limit borders and shadows.
-- High contrast for readability.",
-        "glass": "- Use backdrop-blur-md/lg.
+- High contrast for readability.""",
+        "glass": """- Use backdrop-blur-md/lg.
 - Semi-transparent backgrounds (bg-white/20).
-- Subtle white borders (border-white/10).",
+- Subtle white borders (border-white/10).""",
         "m3-pastel": """- **M3 Pastel Glass (Hybrid)**
 - **Shape**: Large rounded corners (28px/rounded-3xl).
 - **Interaction**: Morph to sharper corners (12px) on hover + Lift + Glow.
 - **Palette**: Pastel Blue (#D1E4FF) & Deep Blue (#003258).
-- **Glass**: Use `bg-white/5` + `backdrop-blur-2xl`."""
+- **Glass**: Use `bg-white/5` + `backdrop-blur-2xl`.""",
+        "neo-brutalism": """- Use thick black borders (border-4 border-black).
+- Use hard, non-blurred shadows (shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]).
+- Use vibrant, high-saturation clashing colors.
+- Bold, often all-caps typography.""",
+        "claymorphism": """- Use soft 3D "inflated" shapes.
+- Implement double inner shadows (one light, one dark).
+- Use very large border radius (rounded-[40px]).
+- Pair with pastel colors and floating drop shadows."""
     }
 
     palette_rules = {
-        "pastel": "- Use soft, muted colors. Avoid harsh saturation.
-- Backgrounds should be very light or off-white.",
-        "dark": "- Use deep grays/zinc for backgrounds.
-- High-contrast accents for visibility.",
-        "vibrant": "- Use bold, energetic colors for CTAs.
-- Strong gradients where appropriate."
+        "pastel": "- Use soft, muted colors. Avoid harsh saturation.\n- Backgrounds should be very light or off-white.",
+        "dark": "- Use deep grays/zinc for backgrounds.\n- High-contrast accents for visibility.",
+        "vibrant": "- Use bold, energetic colors for CTAs.\n- Strong gradients where appropriate."
     }
 
     rules_to_add = f"""
@@ -62,10 +67,7 @@ def main():
     
     with open(rules_file, mode) as f:
         if mode == "a":
-            f.write("
-
---- Updated by ui-designer ---
-")
+            f.write("\n\n--- Updated by ui-designer ---\n")
         f.write(rules_to_add)
     
     print(f"✅ Successfully applied {args.style} style with {args.palette} palette to {rules_file}")
