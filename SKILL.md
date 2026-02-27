@@ -66,7 +66,7 @@ This skill can automatically update your project's `.cursorrules` to keep the AI
 Run this script to append design rules to your current directory's .cursorrules.
 
 ```bash
-python ~/.gemini/skills/ui-designer/scripts/apply_ui_rules.py --style [material|minimal|glass|neo-brutalism|claymorphism|m3-pastel|neo-m3|swiss] --palette [pastel|dark|vibrant]
+python3 $WORKSPACE/skills/ui-designer-skill/scripts/apply_ui_rules.py --style [material|minimal|glass|neo-brutalism|claymorphism|m3-pastel|neo-m3|swiss] --palette [pastel|dark|vibrant]
 ```
 
 ## Workflows
