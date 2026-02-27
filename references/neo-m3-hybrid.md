@@ -1,48 +1,87 @@
-# Neo-M3 Hybrid Design Language
+# Neo-M3 Hybrid (Industrial Modernism)
 
-A sophisticated blend of Neo-Brutalism's raw energy and Material You's user-centric softness. Inspired by tech journalism giants like **Wired** and **The Verge**.
+A high-density design language blending the raw, high-contrast structure of **Neo-Brutalism** with the fluid geometry and pastel tones of **Material You 3**. Inspired by tech journalism (Wired, The Verge) and high-end engineering interfaces.
 
-## Core Principles
+---
 
-### 1. Structure: Industrial Softness
-- **Borders:** 3px to 4px solid black (#000000). Use dashed borders for experimental or "Edan" elements.
-- **Corners:** Large rounded corners (24px to 32px / `rounded-3xl`) on main containers and cards.
-- **Shadows:** Hard, non-blurry offset shadows (6px to 10px). Vibe: "Physical items on a grid."
+## 🎨 Design DNA
 
-### 2. Typography: The "Wired" Impact
-- **Headlines:** Sans-serif with heavy weights (800-900). Tight letter spacing.
-- **Font Choice:** Plus Jakarta Sans or Lexend Mega.
-- **Monospace Accents:** Use JetBrains Mono for system stats, timestamps, and metadata to give an "engineering terminal" feel.
+| Property | Value |
+|---|---|
+| **Border Radius** | **Large**: `24px` – `32px` (`rounded-3xl`) for primary containers. |
+| **Borders** | **Bold**: `3px` – `4px` Solid Black. Use `dashed` for experimental states. |
+| **Shadows** | **Hard Offset**: `6px` – `10px` (No blur). Vibe: "Physical items on a grid." |
+| **Typography** | `Plus Jakarta Sans` (Headers), `JetBrains Mono` (Metadata/Stats). |
+| **Grid** | Modular with visible dividers. High information density. |
 
-### 3. Color: Tonal Pastels & High Contrast
-- **Base Background:** Neutral Slate-50 (#f8fafc) or Light Grey (#f0f0f0).
-- **Accents:** Use a "Verge" inspired tonal palette:
-  - Lavender (#e9d5ff)
-  - Sky Blue (#dbeafe)
-  - Rose (#fce7f3)
-  - Mint (#dcfce7)
-- **High Contrast:** Text is always pure black (#000000) on cards, or white on pure black footers/marquees.
+---
 
-### 4. Elements
-- **Marquees:** Use top-edge scrolling marquees for system status.
-- **Navigation:** Floating pills with high-contrast active states.
-- **Labels:** Small, inverted background labels (white text on black) for tags/categories.
+## 🎨 The "Verge-inspired" Palette
 
-## Sample Tailwind Config Extension
+| Name | Hex Code | Usage |
+|---|---|---|
+| **Canvas** | `#F8FAFC` | Main background. |
+| **Ink** | `#000000` | Borders, primary text, and inverted labels. |
+| **M3 Lavender** | `#E9D5FF` | Hero cards, primary actions. |
+| **M3 Sky** | `#DBEAFE` | Secondary info, data visualization. |
+| **M3 Mint** | `#DCFCE7` | Success states, financial data. |
+| **M3 Rose** | `#FCE7F3` | Warnings, delete actions, system alerts. |
 
-```javascript
-{
-  theme: {
-    extend: {
-      colors: {
-        'neo-bg': '#f8fafc',
-        'neo-accent': '#6366f1',
-        'neo-pink': '#ff00ff',
-      },
-      boxShadow: {
-        'brutal': '8px 8px 0px 0px rgba(0,0,0,1)',
-      }
-    }
-  }
+---
+
+## 🧩 Components
+
+### 1. The "Wired" Article Card
+```html
+<article class="bg-white border-[3px] border-black rounded-[32px] p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-4px] transition-all">
+    <div class="flex gap-2 mb-6">
+        <span class="bg-black text-white text-[10px] font-black uppercase px-3 py-1 rounded-full">Intelligence</span>
+        <span class="font-mono text-[10px] text-zinc-400">2026-02-27</span>
+    </div>
+    <h2 class="text-3xl font-extrabold tracking-tighter leading-none mb-4">Project Prism: The Next Phase of News.</h2>
+    <p class="text-zinc-600 mb-8">Engineering the future of information density through Neo-M3 Hybrid architecture.</p>
+    <button class="bg-[#E9D5FF] border-2 border-black rounded-full px-6 py-2 font-bold text-sm">Read More</button>
+</article>
+```
+
+### 2. Experimental "Dashed" Container
+Used for placeholders or "Wong Edan" (magical/hidden) features.
+```css
+.edan-container {
+    border: 3px dashed #000;
+    background: repeating-linear-gradient(45deg, #f8fafc, #f8fafc 10px, #ffffff 10px, #ffffff 20px);
+    border-radius: 24px;
+    padding: 2rem;
 }
 ```
+
+### 3. System Status Marquee
+```html
+<div class="bg-black text-white py-2 overflow-hidden whitespace-nowrap">
+    <div class="animate-marquee inline-block font-mono text-xs uppercase tracking-widest">
+        System Operational • Project Prism v2.4 Active • Memory Cache Synced • Welcome Master Azzar • 
+    </div>
+</div>
+```
+
+---
+
+## interaksi (Micro-Motion)
+
+- **Snappy Response** — Use `cubic-bezier(0.19, 1, 0.22, 1)` (Expo-out) for all interactions.
+- **Elevation Change** — Elements should lower their shadow offset and translate `XY` on click (active state).
+- **Hover Scale** — Subtle scaling (`scale(1.02)`) on cards combined with shadow hardening.
+
+---
+
+## 🚫 Anti-Patterns
+
+- ❌ **Subtle Borders**: Anything less than `2px` is too weak for this style.
+- ❌ **Low Contrast**: Black on white is mandatory. No dark gray text.
+- ❌ **Traditional Icons**: Use geometric/minimal icons. Avoid overly detailed illustrative icons.
+- ❌ **Rounded Corners < 16px**: Keep it bold and chunky.
+
+---
+
+## 💡 Pro-Tip
+Mix `font-black` (900) sans-serif for main titles with `font-medium` (500) monospace for technical details to create that "Pro-Journalism" aesthetic.
