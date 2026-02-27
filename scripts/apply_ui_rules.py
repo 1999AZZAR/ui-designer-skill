@@ -3,7 +3,7 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser(description="Apply UI design rules to .cursorrules")
-    parser.add_argument("--style", choices=["material", "minimal", "glass", "m3-pastel", "neo-brutalism", "claymorphism"], default="minimal", help="The design language to use.")
+    parser.add_argument("--style", choices=["material", "minimal", "glass", "m3-pastel", "neo-brutalism", "claymorphism", "neo-m3", "swiss"], default="minimal", help="The design language to use.")
     parser.add_argument("--palette", choices=["pastel", "dark", "vibrant"], default="pastel", help="The color palette preference.")
     args = parser.parse_args()
 
@@ -39,7 +39,21 @@ def main():
         "claymorphism": """- Use soft 3D "inflated" shapes.
 - Implement double inner shadows (one light, one dark).
 - Use very large border radius (rounded-[40px]).
-- Pair with pastel colors and floating drop shadows."""
+- Pair with pastel colors and floating drop shadows.""",
+        "neo-m3": """- **Neo-M3 Hybrid (Wired/Verge Style)**
+- **Borders**: 3px solid black borders on all containers.
+- **Shadows**: Hard shadows (6px+ offset, no blur, black).
+- **Shape**: 24px rounded corners (rounded-3xl).
+- **Palette**: High-contrast with tonal pastel accents.
+- **Typography**: Bold, industrial, confident.""",
+        "swiss": """- **Swiss Design (International Typographic Style)**
+- **Grid**: Strict 12-column modular grid. All content aligns to columns.
+- **Typography**: Sans-serif only (Inter, Helvetica Neue). Massive display text, tight letter-spacing.
+- **Shape**: Zero border-radius (rounded-none). No shadows. No gradients.
+- **Color**: 1-2 accent colors max + black/white/gray. Color is functional, not decorative.
+- **Layout**: Asymmetric balance. Horizontal rules as dividers. Uppercase captions with wide tracking.
+- **Motion**: Minimal transitions (color only). No bouncy animations.
+- **Anti-patterns**: No rounded corners >4px, no drop shadows, no decorative illustrations."""
     }
 
     palette_rules = {
