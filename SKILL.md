@@ -24,97 +24,26 @@ Evaluate and refine interfaces for maximum inclusivity and compliance.
 - Focus: WCAG AA/AAA contrast ratios, semantic HTML, and intuitive navigation.
 - Guidance: ARIA attributes, focus ring management, and screen-reader friendliness.
 
-## Design Systems Library
+## Design Systems Library (16 Total)
 
-### Enterprise & Corporate Systems
-
-#### 1. Fluent Design (Microsoft)
-- **Key traits:** Light, depth, motion, material, scale; acrylic materials, reveal effects.
-- **Best for:** Windows apps, Microsoft 365, enterprise applications.
-- **Reference:** [fluent-design.md](references/fluent-design.md)
-
-#### 2. Ant Design
-- **Key traits:** Natural, certain, meaningful, growing; enterprise-focused, 8px grid.
-- **Best for:** Admin panels, data-heavy applications, B2B products.
-- **Reference:** [ant-design.md](references/ant-design.md)
-
-#### 3. Carbon Design (IBM)
-- **Key traits:** Clarity, efficiency, consistency, inclusive; 16-column grid, IBM Plex.
-- **Best for:** Enterprise software, data visualization, professional tools.
-- **Reference:** [carbon-design.md](references/carbon-design.md)
-
-#### 4. Atlassian Design
-- **Key traits:** Bold, optimistic, practical; collaboration-focused, 8px grid.
-- **Best for:** Team collaboration tools, project management, workflow apps.
-- **Reference:** [atlassian-design.md](references/atlassian-design.md)
-
-### Platform-Specific Systems
-
-#### 5. Apple Human Interface Guidelines (HIG)
-- **Key traits:** Clarity, deference, depth; SF Pro typography, vibrancy, blur materials.
-- **Best for:** iOS, iPadOS, macOS, watchOS apps with native feel.
-- **Reference:** [apple-hig.md](references/apple-hig.md)
-
-#### 6. Shopify Polaris
-- **Key traits:** Fresh, efficient, considerate, trustworthy; merchant-focused.
-- **Best for:** E-commerce, merchant tools, admin interfaces.
-- **Reference:** [shopify-polaris.md](references/shopify-polaris.md)
-
-### Modern Aesthetic Trends
-
-#### 7. Material You (M3)
-- **Key traits:** Large rounded corners, tonal color palettes, expressive typography.
-- **Best for:** Android apps, modern web apps, dynamic color systems.
-- **Reference:** [material-you.md](references/material-you.md)
-
-#### 8. Glassmorphism
-- **Key traits:** Backdrop blur, thin borders, vibrant background gradients.
-- **Best for:** Modern dashboards, creative portfolios, hero sections.
-- **Reference:** [glassmorphism.md](references/glassmorphism.md)
-
-#### 9. Neumorphism (Soft UI)
-- **Key traits:** Soft 3D depth, dual shadows, monochromatic, extruded surfaces.
-- **Best for:** Landing pages, creative projects, minimal interfaces.
-- **Reference:** [neumorphism.md](references/neumorphism.md)
-
-#### 10. Neo-Brutalism
-- **Key traits:** Thick black borders, hard shadows, vibrant clashing colors, bold typography.
-- **Best for:** Creative agencies, bold brands, artistic portfolios.
-- **Reference:** [neo-brutalism.md](references/neo-brutalism.md)
-
-#### 11. Claymorphism
-- **Key traits:** Soft 3D shapes, double inner shadows, large border radius, playful pastels.
-- **Best for:** Playful apps, creative tools, modern consumer products.
-- **Reference:** [claymorphism.md](references/claymorphism.md)
-
-### Classic & Timeless Styles
-
-#### 12. Minimalism
-- **Key traits:** Generous padding, typography-driven hierarchy, neutral palettes.
-- **Best for:** Content-focused sites, portfolios, editorial design.
-- **Reference:** [minimalism.md](references/minimalism.md)
-
-#### 13. Swiss Design (International Typographic Style)
-- **Key traits:** Strict 12-column grid, massive sans-serif typography, zero border-radius, no shadows, restrained 1–2 color accent palette, asymmetric layouts, whitespace as structure.
-- **Best for:** Professional services, Swiss brands, typography-focused designs.
-- **Reference:** [swiss-design.md](references/swiss-design.md)
-
-#### 14. Skeuomorphism
-- **Key traits:** Realistic textures, materials, shadows; physical object mimicry.
-- **Best for:** Luxury products, creative apps, nostalgic/vintage themes.
-- **Reference:** [skeuomorphism.md](references/skeuomorphism.md)
-
-### Hybrid Styles
-
-#### 15. M3 Pastel Glass (Hybrid)
-- **Key traits:** Pastel Blue/Deep Blue, 28px corners, morphing hover effects.
-- **Best for:** Modern SaaS, creative tools with Material You base.
-- **Reference:** [m3-pastel-glass.md](references/m3-pastel-glass.md)
-
-#### 16. Neo-M3 Hybrid (Wired/Verge Style)
-- **Key traits:** Wired/Verge inspired high-contrast, 3px solid black borders, hard shadows (6px+), 24px rounded corners, tonal pastel accents.
-- **Best for:** Tech publications, media sites, bold editorial designs.
-- **Reference:** [neo-m3-hybrid.md](references/neo-m3-hybrid.md)
+| Category | System | Key Traits | Best For | Reference |
+|----------|--------|------------|----------|-----------|
+| **Enterprise** | Fluent Design | Acrylic materials, reveal effects, 5 principles | Windows apps, Microsoft 365, enterprise | [fluent-design.md](references/fluent-design.md) |
+| **Enterprise** | Ant Design | Natural, 8px grid, 12-column | Admin panels, B2B, data-heavy apps | [ant-design.md](references/ant-design.md) |
+| **Enterprise** | Carbon Design | 16-column grid, IBM Plex, clarity | Enterprise software, data visualization | [carbon-design.md](references/carbon-design.md) |
+| **Enterprise** | Atlassian Design | Bold, collaboration-focused, 8px grid | Project management, team tools | [atlassian-design.md](references/atlassian-design.md) |
+| **Platform** | Apple HIG | SF Pro, vibrancy, blur materials, 44pt targets | iOS, macOS, native apps | [apple-hig.md](references/apple-hig.md) |
+| **Platform** | Shopify Polaris | Merchant-focused, fresh, teal brand | E-commerce, merchant tools | [shopify-polaris.md](references/shopify-polaris.md) |
+| **Modern** | Material You | Dynamic color, large corners, tonal palettes | Android, modern web apps | [material-you.md](references/material-you.md) |
+| **Modern** | Glassmorphism | Backdrop blur, vibrant gradients | Dashboards, hero sections | [glassmorphism.md](references/glassmorphism.md) |
+| **Modern** | Neumorphism | Soft 3D, dual shadows, monochromatic | Creative projects, minimal UI | [neumorphism.md](references/neumorphism.md) |
+| **Modern** | Neo-Brutalism | Thick borders, hard shadows, bold colors | Creative agencies, artistic brands | [neo-brutalism.md](references/neo-brutalism.md) |
+| **Modern** | Claymorphism | Soft 3D, double inner shadows, playful | Playful apps, consumer products | [claymorphism.md](references/claymorphism.md) |
+| **Classic** | Minimalism | Typography-driven, generous padding | Content sites, portfolios | [minimalism.md](references/minimalism.md) |
+| **Classic** | Swiss Design | 12-column grid, no shadows, asymmetric | Professional services, typography | [swiss-design.md](references/swiss-design.md) |
+| **Classic** | Skeuomorphism | Realistic textures, physical mimicry | Luxury products, vintage themes | [skeuomorphism.md](references/skeuomorphism.md) |
+| **Hybrid** | M3 Pastel Glass | Material + Glass, 28px corners | Modern SaaS, creative tools | [m3-pastel-glass.md](references/m3-pastel-glass.md) |
+| **Hybrid** | Neo-M3 Hybrid | Brutalism + M3, 3px borders, hard shadows | Tech media, editorial sites | [neo-m3-hybrid.md](references/neo-m3-hybrid.md) |
 
 ## Automation: Cursor Integration
 
