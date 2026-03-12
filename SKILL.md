@@ -12,17 +12,16 @@ Expert design guidance for creating aesthetically pleasing, user-centric interfa
 ### 1. Color Palette Generation
 Generate cohesive and harmonic color palettes tailored to the project's vibe.
 - Deliverables: HEX codes, Tailwind config extensions, and CSS variables.
-- Palettes: Default to high-end pastels, dark luxury, or tonal Material You sets.
+- Palettes: Refer to `$WORKSPACE/assets/design-guides/coloring-guide.md` for specific style constraints.
 
 ### 2. Component Theming
 Establish robust theme systems (Light/Dark) through consistent design tokens.
 - Define --bg, --text, --accent, and --border variables.
-- Ensure unified states (hover, focus, active) across all UI elements.
+- **Strictly No generic AI Purple/Indigo gradients.**
 
-### 3. Accessibility Audits
-Evaluate and refine interfaces for maximum inclusivity and compliance.
-- Focus: WCAG AA/AAA contrast ratios, semantic HTML, and intuitive navigation.
-- Guidance: ARIA attributes, focus ring management, and screen-reader friendliness.
+### 3. Iconography
+- **FontAwesome 6**: Use as the primary source for all UI icons.
+- **Emoji Usage**: Strictly forbidden in functional UI (buttons, headers, navigation). Use only for content expression when natural.
 
 ## Design Systems Library (16 Total)
 
@@ -60,7 +59,7 @@ python3 $WORKSPACE/skills/ui-designer-skill/scripts/apply_ui_rules.py --style [f
 
 ### 1. Design Conception
 When starting a new feature, ask for:
-- Primary design language? (Choose from 16+ systems: Fluent, Ant, Carbon, Atlassian, Apple HIG, Polaris, Material You, Glassmorphism, Neumorphism, Neo-Brutalism, Claymorphism, Minimalism, Swiss Design, Skeuomorphism, or hybrid styles)
+- Primary design language? (Choose from 16+ systems)
 - Color vibe? (Pastel, Dark, High-Contrast, Monochromatic, Brand-specific)
 - Target platform? (Web, iOS, Android, Desktop, Cross-platform)
 
@@ -68,6 +67,8 @@ When starting a new feature, ask for:
 Plan the HTML/React structure with Tailwind classes. Focus on Grid/Flex layouts and responsiveness.
 
 ## Best Practices
-- **Consistency:** Stick to one design language per project.
-- **Accessibility:** Ensure enough contrast for text.
-- **Azzar's Rule:** "Just enough engineering to get it done well." (Wong edan mah ajaib).
+- **Anti-AI Aesthetic**: ABSOLUTELY NO purple/indigo gradients or generic "AI glossy" looks. Avoid excessive emojis in UI; use FontAwesome 6 instead.
+- **Coloring**: Refer to `$WORKSPACE/assets/design-guides/coloring-guide.md` for per-style color standards.
+- **Consistency**: Stick to one design language per project.
+- **Accessibility**: Ensure enough contrast for text.
+- **Azzar's Rule**: "Just enough engineering to get it done well." (Wong edan mah ajaib).
