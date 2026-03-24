@@ -18,5 +18,25 @@
     "name": "Inter",
     "weights": [400, 600],
     "purpose": "Minimalist body text, SaaS interfaces"
+  },
+  "enterprise": {
+    "name": "IBM Plex Sans",
+    "weights": [400, 500, 600],
+    "purpose": "Carbon-style enterprise software and data-dense interfaces"
+  },
+  "enterprise_mono": {
+    "name": "IBM Plex Mono",
+    "weights": [400, 500],
+    "purpose": "Carbon technical labels, code, and dense metadata"
+  },
+  "display_editorial": {
+    "name": "Playfair Display",
+    "weights": [600, 700],
+    "purpose": "Skeuomorphic, premium, or editorial interfaces"
+  },
+  "system_ui": {
+    "name": "SF Pro / Segoe UI / system-ui",
+    "weights": [400, 500, 600],
+    "purpose": "Platform-aligned interfaces such as Apple HIG, Fluent, and Ant-like system UI"
   }
 }

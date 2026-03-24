@@ -37,5 +37,34 @@
     "graphite": "#18181B",
     "ghost": "#71717A",
     "ink": "#09090B"
+  },
+  "ant": {
+    "primary": "#1677FF",
+    "hover": "#0958D9",
+    "active": "#003EB3",
+    "success": "#52C41A",
+    "warning": "#FAAD14",
+    "error": "#FF4D4F"
+  },
+  "carbon": {
+    "primary": "#0F62FE",
+    "hover": "#0353E9",
+    "active": "#002D9C",
+    "success": "#24A148",
+    "warning": "#F1C21B",
+    "error": "#DA1E28"
+  },
+  "polaris": {
+    "primary": "#008060",
+    "ink": "#202223",
+    "surface": "#F6F6F7",
+    "border": "#D2D5D8"
+  },
+  "skeuomorphism": {
+    "leather_dark": "#3E2723",
+    "leather_mid": "#5D4037",
+    "wood_walnut": "#4E342E",
+    "metal_steel": "#37474F",
+    "gold": "#FFB300"
   }
 }
