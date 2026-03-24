@@ -10,6 +10,8 @@
 | **Platform: Web (enterprise)** | ant, carbon, atlassian | See references/ |
 | **Platform: E-commerce** | polaris | `references/shopify-polaris.md` |
 | **Product: Admin panel/B2B** | ant, carbon | `references/ant-design.md` |
+| **Product: Internal tool/Back-office** | ant | `references/ant-design.md` |
+| **Product: CMS/Operations** | ant | `references/ant-design.md` |
 | **Product: Project management** | atlassian, carbon | `references/atlassian-design.md` |
 | **Product: Dashboard** | fluent, ant, glass | `references/fluent-design.md` |
 | **Product: Creative/Portfolio** | neo-brutalism, glass | `references/neo-brutalism.md` |
@@ -19,6 +21,8 @@
 | **Style: Minimal/Clean** | minimal, swiss | `references/minimalism.md` |
 | **Style: Modern/Trendy** | material, glass, neumorphism | `references/glassmorphism.md` |
 | **Style: Corporate** | fluent, carbon, atlassian | `references/carbon-design.md` |
+| **Constraint: Dense workflow, forms, repeat use** | ant | `references/ant-design.md` |
+| **Constraint: Strong brand expression needed** | avoid default ant-only | `references/ant-design.md` |
 | **Style: Luxury/Tactile** | skeuomorphism | `references/skeuomorphism.md` |
 
 ## Available Systems
@@ -53,5 +57,14 @@ python3 scripts/apply_ui_rules.py --style [system] --palette [pastel|dark|vibran
 | minimal | Neutral | 0-8px | Flex | None |
 | swiss | 1-2 accent | 0-4px | 12-col | None |
 | skeuomorphism | Material | 8-12px | Flex | Rich |
+
+## Ant Design Fast Check
+
+- Use `ant` first for admin panels, dashboards, CMS, CRMs, and internal tools.
+- Apply the four checks: `Natural`, `Certain`, `Meaningful`, `Growing`.
+- Prefer header + actions/filters + main content + secondary detail page scaffolding.
+- Use familiar enterprise patterns: forms, tables, tags, drawers, modals, inline validation, empty/loading/error states.
+- Keep motion functional and feedback immediate.
+- If the product needs strong brand distinctiveness, keep Ant behavior and structure but layer brand voice carefully.
 
 Reference files: `references/[system-name].md`
