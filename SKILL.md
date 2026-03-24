@@ -42,6 +42,7 @@ Use this skill when the user needs interface direction, design-system selection,
 4. Use the map.
 - Use [QUICK_REFERENCE.md](QUICK_REFERENCE.md) as the main map for fast system selection.
 - Then open only the relevant file in `references/`.
+ - If the page type is obvious, open the matching file in `assets/archetypes/`.
 
 ## Selection Standard
 
@@ -80,9 +81,10 @@ If Ant wins, use it for:
 2. Use [QUICK_REFERENCE.md](QUICK_REFERENCE.md) as the map.
 3. Choose the best single system or deliberate hybrid.
 4. Open only the matching reference file or files.
-5. Define color direction, typography direction, spacing behavior, and component style.
-6. Translate the chosen system into page structure and component rules.
-7. If needed, run the automation script to append design rules.
+5. If the page type is known, open the matching archetype file in `assets/archetypes/`.
+6. Define color direction, typography direction, spacing behavior, and component style.
+7. Translate the chosen system into page structure and component rules.
+8. If needed, run the automation script to append design rules.
 
 ## Automation
 
@@ -96,3 +98,4 @@ python3 scripts/apply_ui_rules.py --style [fluent|ant|carbon|atlassian|apple-hig
 
 - Main map: [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
 - System details: `references/ant-design.md`, `references/carbon-design.md`, `references/fluent-design.md`, `references/atlassian-design.md`, `references/apple-hig.md`, `references/material-you.md`, `references/shopify-polaris.md`, `references/minimalism.md`, `references/swiss-design.md`, `references/neo-brutalism.md`, `references/glassmorphism.md`, `references/claymorphism.md`, `references/skeuomorphism.md`, `references/neo-m3-hybrid.md`, `references/m3-pastel-glass.md`
+- Page archetypes: `assets/archetypes/dashboard.md`, `assets/archetypes/settings.md`, `assets/archetypes/table-detail.md`, `assets/archetypes/marketing-hero.md`, `assets/archetypes/editorial-landing.md`

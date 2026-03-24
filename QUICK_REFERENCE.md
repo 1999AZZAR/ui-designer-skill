@@ -76,6 +76,16 @@ Use these only when the split is explicit:
   - `material` owns structure and behavior
   - `m3-pastel` softens color and surface language
 
+## Page Archetype Routing
+
+After choosing a system, route to the closest page archetype:
+
+- Overview, KPI, analytics, product home: `assets/archetypes/dashboard.md`
+- Preferences, account, configuration, permissions: `assets/archetypes/settings.md`
+- List plus record inspection/editing: `assets/archetypes/table-detail.md`
+- Landing page, campaign, splash, launch: `assets/archetypes/marketing-hero.md`
+- Story-led, content-led, typography-first page: `assets/archetypes/editorial-landing.md`
+
 ## Anti-Misuse Checks
 
 - Do not use `glass`, `claymorphism`, `neumorphism`, or `skeuomorphism` as the sole system for dense back-office workflows.
