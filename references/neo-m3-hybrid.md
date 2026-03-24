@@ -4,6 +4,12 @@ A high-density design language blending the raw structure of Neo-Brutalism with 
 
 ---
 
+## Recommended Usage
+
+- Best for: editorial tech products, bold SaaS, media dashboards, stronger-branded product surfaces
+- Avoid for: strict platform mimicry or ultra-quiet minimalist products
+- Strong hybrid partner with: `ant`, `material`, `minimal`
+
 ## Design DNA
 
 | Property | Value |
@@ -54,3 +60,7 @@ A high-density design language blending the raw structure of Neo-Brutalism with 
 - Low Contrast: Black on white is mandatory.
 - Traditional Icons: Use geometric/minimal icons.
 - Rounded Corners < 16px: Keep it bold.
+
+## Reference
+
+**Components:** `assets/components/neo-m3-components.md`

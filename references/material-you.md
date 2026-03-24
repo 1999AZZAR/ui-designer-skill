@@ -2,6 +2,12 @@
 
 Google's Material Design 3 focus on personal, adaptive, and expressive design. It emphasizes dynamic color, organic shapes, and a systematic approach to elevation and hierarchy.
 
+## Recommended Usage
+
+- Best for: Android apps, adaptive web apps, modern product UI, expressive consumer SaaS
+- Avoid as-is for: highly rigid enterprise density or nostalgic tactile interfaces
+- Strong hybrid partner with: `m3-pastel`, `glass`
+
 ## Design DNA
 
 | Property | Value |
@@ -53,3 +59,7 @@ Hierarchy is defined by the container's tone rather than its shadow depth.
 - Tiny Border Radius: M3 is fundamentally based on large, comfortable curves.
 - High Saturation: Unless for specific emphasis, stick to tonal ranges of a single seed color.
 - Static Layouts: Design for flexibility and adaptive spacing.
+
+## Reference
+
+**Components:** `assets/components/material-components.md`

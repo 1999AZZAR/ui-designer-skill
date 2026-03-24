@@ -2,6 +2,12 @@
 
 Minimalist design combining skeuomorphism and flat design, creating soft extruded shapes from backgrounds using subtle dual shadows.
 
+## Recommended Usage
+
+- Best for: niche control panels, wellness apps, music tools, ambient UI experiments
+- Avoid for: complex admin tools, dense forms, highly varied content surfaces
+- Strong hybrid partner with: `minimal`
+
 ## Core Principles
 
 - **Background Unity**: Elements appear carved from or extruded out of background
@@ -104,3 +110,7 @@ boxShadow: {
   'neu-pressed': 'inset 4px 4px 8px rgba(163,177,198,0.5), inset -4px -4px 8px rgba(255,255,255,0.5)'
 }
 ```
+
+## Reference
+
+**Components:** `assets/components/neumorphism-components.md`

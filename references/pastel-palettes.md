@@ -2,6 +2,12 @@
 
 Pastel colors are high-value, low-saturation tones that create a sense of calmness, creativity, and premium softness. They are essential for modern dashboard systems (M3 Pastel) and minimalist interfaces.
 
+## Recommended Usage
+
+- Best for: friendly SaaS, onboarding, creative tools, soft consumer products
+- Avoid for: severe enterprise austerity or urgent high-contrast alarm-heavy UI
+- Strong pairings: `material`, `m3-pastel`, `claymorphism`, `glass`
+
 ## Design DNA
 
 | Property | Value |
@@ -56,3 +62,7 @@ Pastel colors are high-value, low-saturation tones that create a sense of calmne
 
 - Neon Overload: If the color hurts the eyes, it is not a pastel.
 - Black Text on Pastel: Prefer a very dark version of the same hue (e.g., Deep Navy on Pastel Blue) instead of pure black for a more "expensive" feel.
+
+## Reference
+
+**Palette asset:** `assets/palettes.json`

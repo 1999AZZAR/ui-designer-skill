@@ -2,6 +2,12 @@
 
 Claymorphism is a design trend that evolves from neumorphism, focusing on soft, inflated, 3D-like surfaces that look like they are made of clay. It uses double inner shadows to create volume and depth without the heavy outer shadows of traditional skeuomorphism.
 
+## Recommended Usage
+
+- Best for: playful consumer apps, friendly onboarding, simple dashboards, soft brand surfaces
+- Avoid for: dense enterprise software, analytical dashboards, compact form-heavy products
+- Strong hybrid partner with: `material`, `m3-pastel`
+
 ## Design DNA
 
 | Property | Value |
@@ -47,3 +53,7 @@ Claymorphism works best with vibrant backgrounds and light-colored floating card
 - No Sharp Corners: Everything must be "inflated" and round.
 - No Flat Colors: Use the inner shadows to ensure volume is visible.
 - No Dark Backgrounds for Cards: Clay cards are typically light or very bright; dark clay looks like heavy stone, losing the "clay" feel.
+
+## Reference
+
+**Components:** `assets/components/claymorphism-components.md`

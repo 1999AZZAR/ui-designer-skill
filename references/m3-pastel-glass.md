@@ -4,6 +4,12 @@ A premium design system combining Material You (M3) geometry, Glassmorphism dept
 
 ---
 
+## Recommended Usage
+
+- Best for: creative SaaS, soft modern dashboards, studio tools, onboarding-heavy products
+- Avoid for: hard-edged enterprise operations or extremely restrained editorial systems
+- Strong hybrid partner with: `material`, `glass`
+
 ## Design DNA
 
 | Property | Value |
@@ -69,3 +75,7 @@ A premium design system combining Material You (M3) geometry, Glassmorphism dept
 - High Saturation: Avoid neon colors. Keep everything dusty or creamy.
 - Sharp Corners in Idle: M3 is fundamentally round.
 - Stacking Blurs: Avoid more than 3 layers of backdrop-filter for performance.
+
+## Reference
+
+**Components:** `assets/components/m3-pastel-components.md`

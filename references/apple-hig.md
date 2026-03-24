@@ -2,6 +2,12 @@
 
 Design language for iOS, iPadOS, macOS, emphasizing clarity, deference, and depth.
 
+## Recommended Usage Heuristics
+
+- Best for: iOS apps, macOS apps, Apple-adjacent web products, calm premium interfaces
+- Avoid for: Microsoft-like enterprise tooling or loud brand-first visual systems
+- Strong hybrid partner with: `minimal`
+
 ## Design Principles
 
 - **Clarity**: Legible text, precise icons, obvious functionality

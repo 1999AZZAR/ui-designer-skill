@@ -2,6 +2,12 @@
 
 A sophisticated design language that combines the comfort of Dark Mode with the softness of Pastel palettes. It avoids pure black (#000000) to reduce eye strain, opting for deep, desaturated midnight tones.
 
+## Recommended Usage
+
+- Best for: atmospheric dashboards, creative tools, media products, brand-forward dark interfaces
+- Avoid for: strict platform-native UI or products that require severe operational austerity
+- Strong hybrid partner with: `glass`, `neo-m3`, `material`
+
 ## Design DNA
 
 | Property | Value |
@@ -48,3 +54,7 @@ A sophisticated design language that combines the comfort of Dark Mode with the 
 1. Depth through Layers: Use slightly lighter backgrounds for nested elements instead of shadows.
 2. Controlled Vibrancy: Only one pastel accent per screen to maintain the "Midnight" vibe.
 3. Typography Weight: Use medium to semibold for headings to ensure they "pop" against the dark background.
+
+## Reference
+
+**Palette asset:** `assets/palettes.json`

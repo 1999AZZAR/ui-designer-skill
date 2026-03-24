@@ -4,6 +4,12 @@ A design philosophy born in 1950s Switzerland that prioritizes clarity, objectiv
 
 ---
 
+## Recommended Usage
+
+- Best for: editorial sites, portfolios, professional services, typography-first products
+- Avoid for: tactile material-heavy UI, soft glass treatments, playful consumer surfaces
+- Strong hybrid partner with: `minimal`, `neo-m3`
+
 ## Core Principles
 
 1. Grid is Law — All layout decisions are governed by a strict modular grid system. Content aligns to invisible columns and baselines.
@@ -46,3 +52,7 @@ A design philosophy born in 1950s Switzerland that prioritizes clarity, objectiv
 - Gradient backgrounds
 - Decorative illustrations
 - Centered text layouts (except single-line captions)
+
+## Reference
+
+**Components:** `assets/components/swiss-components.md`

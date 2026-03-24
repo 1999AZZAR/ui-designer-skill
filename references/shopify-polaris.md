@@ -2,6 +2,12 @@
 
 Merchant-focused design system for e-commerce and admin interfaces.
 
+## Recommended Usage Heuristics
+
+- Best for: commerce operations, merchant tools, inventory/order/admin products
+- Avoid as the sole system for: editorial portfolios or loud experimental branding
+- Strong hybrid partner with: `minimal`
+
 ## Design Principles
 
 - **Fresh**: Modern, clean aesthetic that feels trustworthy

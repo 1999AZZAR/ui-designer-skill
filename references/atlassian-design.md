@@ -2,6 +2,12 @@
 
 Collaborative design system for Jira, Confluence, Trello, Bitbucket.
 
+## Recommended Usage Heuristics
+
+- Best for: project management, collaboration products, teamwork-heavy internal tools
+- Avoid as the sole system for: highly expressive marketing-led or luxury tactile products
+- Strong hybrid partner with: `minimal`
+
 ## Design Principles
 
 - **Bold, Optimistic, Practical**: Confident, positive, task-focused

@@ -4,6 +4,12 @@ A bold, high-contrast evolution of traditional brutalism, optimized for high vis
 
 ---
 
+## Recommended Usage
+
+- Best for: experimental brands, creative studios, campaign sites, expressive product launches
+- Avoid for: dense enterprise workflows, calm professional systems, subtle luxury products
+- Strong hybrid partner with: `minimal`, `neo-m3`
+
 ## Design DNA
 
 | Property | Value |
@@ -50,3 +56,7 @@ A bold, high-contrast evolution of traditional brutalism, optimized for high vis
 - Gradients: Gradients are for soft designs. Neo-brutalism is flat.
 - Blurred Shadows: If it is not hard-edged, it is not brutal.
 - Subtle Borders: 1px borders will get lost. Use 2px or 4px.
+
+## Reference
+
+**Components:** `assets/components/neo-brutalism-components.md`

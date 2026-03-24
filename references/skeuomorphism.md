@@ -2,6 +2,12 @@
 
 Design approach mimicking real-world objects using realistic textures, shadows, reflections, and dimensional details.
 
+## Recommended Usage Heuristics
+
+- Best for: luxury interfaces, nostalgic products, tactile creative surfaces, retro control panels
+- Avoid as the sole system for: dense operational products or high-speed scanning workflows
+- Strong hybrid partner with: `minimal`
+
 ## Core Principles
 
 - **Real-World Mimicry**: Digital elements imitate physical counterparts

@@ -2,6 +2,12 @@
 
 Enterprise design system emphasizing clarity, efficiency, and consistency.
 
+## Recommended Usage Heuristics
+
+- Best for: enterprise software, analytical tools, data-heavy interfaces, structured internal products
+- Avoid as-is for: playful consumer branding or soft atmospheric surfaces
+- Strong hybrid partner with: `minimal`
+
 ## Design Principles
 
 - **Clarity**: Clear visual hierarchy, purposeful typography

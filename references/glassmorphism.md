@@ -2,6 +2,12 @@
 
 Glassmorphism is based on transparency and multi-layered approaches. It creates a sense of "virtual glass" by using background blur, light borders, and subtle transparency.
 
+## Recommended Usage
+
+- Best for: hero sections, premium overlays, modern landing pages, highlight cards, branded dashboards
+- Avoid as the sole system for: dense forms, back-office systems, table-heavy workflows
+- Strong hybrid partner with: `ant`, `material`, `neo-m3`
+
 ## Design DNA
 
 | Property | Value |
@@ -45,3 +51,7 @@ Glassmorphism is based on transparency and multi-layered approaches. It creates 
 - Flat Borders: Always use semi-transparent borders to mimic edge refraction.
 - Heavy Shadows: Use very light, large-spread shadows or skip them entirely.
 - Low Performance: Avoid using more than 3-5 glass layers on a single view.
+
+## Reference
+
+**Components:** `assets/components/glassmorphism-components.md`

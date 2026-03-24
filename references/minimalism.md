@@ -4,6 +4,12 @@ Minimalist design is the art of extreme intentionality. It focuses on essential 
 
 ---
 
+## Recommended Usage
+
+- Best for: editorial sites, portfolios, clean product pages, content-first SaaS
+- Avoid for: products that need heavy guidance through dense operational workflows
+- Strong hybrid partner with: `carbon`, `neo-m3`
+
 ## Design DNA
 
 | Property | Value |
@@ -60,3 +66,7 @@ Minimalist design is the art of extreme intentionality. It focuses on essential 
 - Drop Shadows with Color: Shadows should always be neutral.
 - Nested Boxes: Avoid "a box inside a box". Use white space.
 - Icons for Everything: Use text when it is clearer.
+
+## Reference
+
+**Components:** `assets/components/minimal-components.md`

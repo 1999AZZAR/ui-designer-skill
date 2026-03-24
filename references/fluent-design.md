@@ -2,6 +2,12 @@
 
 Light, depth, motion, material, and scale for intuitive experiences.
 
+## Recommended Usage Heuristics
+
+- Best for: Windows-like software, Microsoft-adjacent enterprise products, layered productivity UI
+- Avoid as the sole choice for: highly tactile or aggressively anti-corporate brand directions
+- Strong hybrid partner with: `minimal`
+
 ## Design Principles
 
 - **Light**: Strategic illumination draws attention, reveals hierarchy
