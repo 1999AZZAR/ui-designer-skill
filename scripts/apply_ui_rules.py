@@ -25,11 +25,19 @@ def main():
 - Dual shadow system for depth (light/dark).
 - Segoe UI Variable font or system fonts.""",
         "ant": """- **Ant Design (Enterprise UI)**
-- Natural, certain, meaningful, growing principles.
+- Use for admin panels, dashboards, CMS, internal tools, and workflow-heavy products.
+- Apply the four principles as operating rules:
+  - Natural: familiar layouts, clear grouping, obvious labels, low cognitive load.
+  - Certain: predictable states, explicit hierarchy, consistent spacing and behavior.
+  - Meaningful: every control supports the task flow; avoid decorative noise.
+  - Growing: support progressive complexity, more data, and more user roles over time.
 - 8px base spacing system.
 - 12-column responsive grid (xs to xxl).
 - Ant Blue (#1677FF) for primary actions.
-- Clean borders (1-2px), subtle shadows.
+- Clean borders (1-2px), restrained radius, subtle shadows.
+- Prefer page scaffolding with header, actions/filters row, main content region, and secondary detail region.
+- Use familiar enterprise patterns: forms, tables, tags, drawers, modals, inline validation, empty/loading/error states.
+- Motion should be functional feedback, not decoration.
 - System fonts or -apple-system.""",
         "carbon": """- **Carbon Design (IBM)**
 - Clarity, efficiency, consistency, inclusive.

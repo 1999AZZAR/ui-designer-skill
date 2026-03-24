@@ -7,6 +7,8 @@ description: Design beautiful interfaces using 16+ design systems including Mate
 
 Expert design guidance for creating aesthetically pleasing, user-centric interfaces across multiple design languages. This skill focuses on the visual and structural design intent before and during implementation.
 
+When a user asks for Ant Design, enterprise UI, admin tools, dashboards, operational software, or high-density workflows, bias toward Ant Design principles as a decision framework, not just a visual style.
+
 ## Core Capabilities
 
 ### 1. Color Palette Generation
@@ -18,6 +20,13 @@ Generate cohesive and harmonic color palettes tailored to the project's vibe.
 Establish robust theme systems (Light/Dark) through consistent design tokens.
 - Define --bg, --text, --accent, and --border variables.
 - **Strictly No generic AI Purple/Indigo gradients.**
+
+### 2.5. Principle-Driven UX
+Choose patterns based on product behavior, not just visual taste.
+- `Natural`: reduce cognitive load with familiar structure, plain labeling, and interaction flows that match user expectations.
+- `Certain`: keep hierarchy, spacing, states, and component behavior predictable across pages.
+- `Meaningful`: every surface, control, and motion must support the user task; avoid decorative noise.
+- `Growing`: design systems should scale with product complexity and help users discover deeper capability over time.
 
 ### 3. Iconography
 - **FontAwesome 6**: Use as the primary source for all UI icons.
@@ -63,12 +72,28 @@ When starting a new feature, ask for:
 - Color vibe? (Pastel, Dark, High-Contrast, Monochromatic, Brand-specific)
 - Target platform? (Web, iOS, Android, Desktop, Cross-platform)
 
+If the product is workflow-heavy, multi-role, form-heavy, or data-dense, recommend `Ant Design` by default unless the user has a clear brand/system constraint.
+
+For Ant Design-oriented work, evaluate every proposal against these checks:
+- `Natural`: is the flow obvious without explanation?
+- `Certain`: are actions, states, and information hierarchy consistent?
+- `Meaningful`: does each element earn its place in the task flow?
+- `Growing`: will this still work when the product gains more roles, data, or features?
+
 ### 2. Component Architecture
 Plan the HTML/React structure with Tailwind classes. Focus on Grid/Flex layouts and responsiveness.
+
+For Ant Design-oriented component architecture:
+- Prefer clear page scaffolding: page header, filters/actions row, primary content region, secondary detail/supporting region.
+- Use an 8px spacing rhythm and restrained radii/shadows.
+- Favor familiar enterprise patterns: tables, forms, segmented actions, status tags, empty states, inline validation, and immediate feedback.
+- Keep density efficient but readable. Enterprise UI should feel calm, not barren or overloaded.
+- Treat motion as functional feedback, not decoration.
 
 ## Best Practices
 - **Anti-AI Aesthetic**: ABSOLUTELY NO purple/indigo gradients or generic "AI glossy" looks. Avoid excessive emojis in UI; use FontAwesome 6 instead.
 - **Coloring**: Refer to `$WORKSPACE/assets/design-guides/coloring-guide.md` for per-style color standards.
 - **Consistency**: Stick to one design language per project.
 - **Accessibility**: Ensure enough contrast for text.
+- **Ant Design Usage**: For enterprise/admin work, optimize for clarity, predictability, and task completion before visual novelty.
 - **Azzar's Rule**: "Just enough engineering to get it done well." (Wong edan mah ajaib).

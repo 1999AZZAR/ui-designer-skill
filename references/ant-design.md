@@ -1,6 +1,6 @@
 # Ant Design System
 
-Enterprise-class UI design by Alibaba for natural, efficient experiences.
+Enterprise-class UI design by Alibaba for natural, efficient experiences. Use this system when the product has dense workflows, repeat use, multiple roles, complex forms, or data-heavy operational tasks.
 
 ## Design Principles
 
@@ -8,6 +8,36 @@ Enterprise-class UI design by Alibaba for natural, efficient experiences.
 - **Certain**: Grounded decisions, clear hierarchy, predictable behavior
 - **Meaningful**: Purpose-driven, task-focused, no waste
 - **Growing**: Evolves with feedback, scalable architecture
+
+## Principle Translation
+
+Apply the four values as working rules:
+
+### Natural
+- Prefer familiar mental models over novel layouts.
+- Reduce cognitive load with clear grouping, obvious labels, and visually scannable hierarchy.
+- Use interaction patterns users already expect in enterprise tools: tables, forms, drawers, modals, filters, pagination, tabs.
+
+### Certain
+- Keep spacing, typography, status colors, and component states consistent across the product.
+- Make interactive outcomes predictable: hover, active, disabled, loading, success, error.
+- Default to explicit labels and visible system status rather than cleverness.
+
+### Meaningful
+- Each control should map to a real task or decision.
+- Decorative motion, copy, and ornamentation should be minimal.
+- Feedback should be immediate and useful: validation, progress, empty states, confirmations.
+
+### Growing
+- Design information architecture so the system can absorb more data, more user roles, and more advanced workflows without collapsing.
+- Reveal advanced functionality progressively instead of front-loading all complexity.
+- Favor reusable tokens, components, and page patterns.
+
+## Recommended Usage Heuristics
+
+- Best for: admin panels, CMS, CRMs, dashboards, back-office systems, internal tools, order management, analytics.
+- Avoid using it as-is for: highly expressive consumer branding, editorial experiences, or products that depend on strong visual distinctiveness.
+- If used for a branded product, keep the Ant behavioral rules and page logic, then layer brand voice carefully on top.
 
 ## Color System
 
@@ -55,6 +85,16 @@ Small: 2px | Base: 6px | Large: 8px | Circle: 50%
 
 12-column responsive | xs: <576px, sm: ≥576px, md: ≥768px, lg: ≥992px, xl: ≥1200px, xxl: ≥1600px
 
+## Page Structure
+
+A strong default Ant-style page layout:
+- Page title and concise context summary
+- Primary actions near the title or top-right
+- Filters/search before the data region
+- Main content in cards, tables, lists, or form sections
+- Secondary detail in drawers, side panels, tabs, or expandable rows
+- Empty, loading, and error states designed as first-class views
+
 ## Quick Examples
 
 ### Button
@@ -80,6 +120,13 @@ Full components: `assets/components/ant-*.md`
 - **WCAG 2.1 AA**: 4.5:1 minimum
 - **Focus**: 2px solid #1677FF, offset 2px
 - **Keyboard**: Tab order follows visual hierarchy
+
+## Behavior Guidance
+
+- Immediate feedback beats delayed surprise.
+- Default to inline validation where possible.
+- Use modals for confirmation or blocking tasks; use drawers for contextual editing; use toasts/messages for lightweight system feedback.
+- Keep action priority obvious: primary, secondary, tertiary, dangerous.
 
 ## Tailwind Config
 
