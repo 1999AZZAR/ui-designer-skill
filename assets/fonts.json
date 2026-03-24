@@ -1,42 +1,192 @@
 {
-  "primary": {
-    "name": "Plus Jakarta Sans",
-    "weights": [400, 500, 600, 700, 800],
-    "purpose": "Headings, Body, Professional interfaces"
+  "families": {
+    "plus_jakarta_sans": {
+      "name": "Plus Jakarta Sans",
+      "weights": [400, 500, 600, 700, 800],
+      "category": "sans-serif",
+      "purpose": "General product UI, modern SaaS, polished multi-use default"
+    },
+    "jetbrains_mono": {
+      "name": "JetBrains Mono",
+      "weights": [400, 500, 700],
+      "category": "monospace",
+      "purpose": "Metadata, technical UI, stats, labels, code-adjacent surfaces"
+    },
+    "space_grotesk": {
+      "name": "Space Grotesk",
+      "weights": [500, 700],
+      "category": "sans-serif",
+      "purpose": "Bold display type, experimental and expressive interfaces"
+    },
+    "inter": {
+      "name": "Inter",
+      "weights": [400, 500, 600, 700],
+      "category": "sans-serif",
+      "purpose": "Minimal UI, clean content-first interfaces, flexible fallback"
+    },
+    "ibm_plex_sans": {
+      "name": "IBM Plex Sans",
+      "weights": [400, 500, 600, 700],
+      "category": "sans-serif",
+      "purpose": "Enterprise software, analytical tools, Carbon-aligned structure"
+    },
+    "ibm_plex_mono": {
+      "name": "IBM Plex Mono",
+      "weights": [400, 500, 600],
+      "category": "monospace",
+      "purpose": "Dense metadata, tables, code, Carbon technical language"
+    },
+    "playfair_display": {
+      "name": "Playfair Display",
+      "weights": [600, 700],
+      "category": "serif",
+      "purpose": "Editorial, premium, tactile, luxury, or nostalgic surfaces"
+    },
+    "sf_pro": {
+      "name": "SF Pro",
+      "weights": [400, 500, 600, 700],
+      "category": "system-sans",
+      "purpose": "Apple-platform aligned interfaces and calm premium apps"
+    },
+    "segoe_ui": {
+      "name": "Segoe UI",
+      "weights": [400, 600, 700],
+      "category": "system-sans",
+      "purpose": "Fluent and Microsoft-adjacent interfaces"
+    },
+    "roboto": {
+      "name": "Roboto",
+      "weights": [400, 500, 700],
+      "category": "sans-serif",
+      "purpose": "Material-style apps and adaptable product surfaces"
+    },
+    "outfit": {
+      "name": "Outfit",
+      "weights": [400, 500, 600, 700],
+      "category": "sans-serif",
+      "purpose": "Soft modern SaaS, M3 pastel, clean branded dashboards"
+    },
+    "lexend": {
+      "name": "Lexend",
+      "weights": [500, 700, 800],
+      "category": "sans-serif",
+      "purpose": "Readable bold display for loud digital brands and neo-brutalism"
+    },
+    "helvetica_neue": {
+      "name": "Helvetica Neue",
+      "weights": [400, 500, 700],
+      "category": "sans-serif",
+      "purpose": "Swiss design, modernist editorial systems, restrained professionalism"
+    }
   },
-  "technical": {
-    "name": "JetBrains Mono",
-    "weights": [400, 500],
-    "purpose": "Metadata, System stats, Code"
+  "role_defaults": {
+    "product_ui": "plus_jakarta_sans",
+    "technical_ui": "jetbrains_mono",
+    "enterprise_ui": "ibm_plex_sans",
+    "enterprise_mono": "ibm_plex_mono",
+    "minimal_ui": "inter",
+    "platform_apple": "sf_pro",
+    "platform_microsoft": "segoe_ui",
+    "material_ui": "roboto",
+    "editorial_display": "playfair_display",
+    "bold_display": "space_grotesk"
   },
-  "display": {
-    "name": "Space Grotesk",
-    "weights": [700],
-    "purpose": "Massive display type, Neo-Brutalism"
-  },
-  "clean": {
-    "name": "Inter",
-    "weights": [400, 600],
-    "purpose": "Minimalist body text, SaaS interfaces"
-  },
-  "enterprise": {
-    "name": "IBM Plex Sans",
-    "weights": [400, 500, 600],
-    "purpose": "Carbon-style enterprise software and data-dense interfaces"
-  },
-  "enterprise_mono": {
-    "name": "IBM Plex Mono",
-    "weights": [400, 500],
-    "purpose": "Carbon technical labels, code, and dense metadata"
-  },
-  "display_editorial": {
-    "name": "Playfair Display",
-    "weights": [600, 700],
-    "purpose": "Skeuomorphic, premium, or editorial interfaces"
-  },
-  "system_ui": {
-    "name": "SF Pro / Segoe UI / system-ui",
-    "weights": [400, 500, 600],
-    "purpose": "Platform-aligned interfaces such as Apple HIG, Fluent, and Ant-like system UI"
+  "system_pairs": {
+    "ant": {
+      "primary": "plus_jakarta_sans",
+      "secondary": "inter",
+      "mono": "jetbrains_mono",
+      "notes": "Use a calm, highly legible sans. Keep mono limited to data or technical metadata."
+    },
+    "carbon": {
+      "primary": "ibm_plex_sans",
+      "secondary": "inter",
+      "mono": "ibm_plex_mono",
+      "notes": "Carbon should default to IBM Plex for both credibility and structural clarity."
+    },
+    "fluent": {
+      "primary": "segoe_ui",
+      "secondary": "inter",
+      "mono": "jetbrains_mono",
+      "notes": "Prefer Segoe UI for Microsoft-adjacent work. Keep the tone practical and calm."
+    },
+    "atlassian": {
+      "primary": "plus_jakarta_sans",
+      "secondary": "inter",
+      "mono": "jetbrains_mono",
+      "notes": "Choose a straightforward collaborative product voice with high legibility."
+    },
+    "apple_hig": {
+      "primary": "sf_pro",
+      "secondary": "inter",
+      "mono": "jetbrains_mono",
+      "notes": "Stay close to platform feel. Avoid decorative display typography."
+    },
+    "polaris": {
+      "primary": "inter",
+      "secondary": "plus_jakarta_sans",
+      "mono": "jetbrains_mono",
+      "notes": "Keep merchant UI friendly, direct, and highly readable."
+    },
+    "material": {
+      "primary": "roboto",
+      "secondary": "outfit",
+      "mono": "jetbrains_mono",
+      "notes": "Roboto is the stable Material default. Outfit can soften more branded variants."
+    },
+    "m3_pastel": {
+      "primary": "outfit",
+      "secondary": "plus_jakarta_sans",
+      "mono": "jetbrains_mono",
+      "notes": "Use clean rounded sans choices to support softer surfaces."
+    },
+    "minimal": {
+      "primary": "inter",
+      "secondary": "helvetica_neue",
+      "mono": "jetbrains_mono",
+      "notes": "Let typography disappear into structure. Avoid loud display fonts."
+    },
+    "swiss": {
+      "primary": "helvetica_neue",
+      "secondary": "inter",
+      "mono": "jetbrains_mono",
+      "notes": "Typography is architecture. Favor restraint and precision."
+    },
+    "glass": {
+      "primary": "outfit",
+      "secondary": "plus_jakarta_sans",
+      "mono": "jetbrains_mono",
+      "notes": "Readable sans forms are critical because translucent surfaces already reduce clarity."
+    },
+    "neumorphism": {
+      "primary": "inter",
+      "secondary": "outfit",
+      "mono": "jetbrains_mono",
+      "notes": "Keep fonts simple and readable to offset low-contrast surfaces."
+    },
+    "claymorphism": {
+      "primary": "outfit",
+      "secondary": "plus_jakarta_sans",
+      "mono": "jetbrains_mono",
+      "notes": "Rounded, soft sans-serif pairings fit the inflated geometry best."
+    },
+    "neo_brutalism": {
+      "primary": "space_grotesk",
+      "secondary": "lexend",
+      "mono": "jetbrains_mono",
+      "notes": "Favor assertive display weight and hard contrast."
+    },
+    "neo_m3": {
+      "primary": "plus_jakarta_sans",
+      "secondary": "space_grotesk",
+      "mono": "jetbrains_mono",
+      "notes": "Use bold product typography with monospace reserved for technical emphasis."
+    },
+    "skeuomorphism": {
+      "primary": "playfair_display",
+      "secondary": "helvetica_neue",
+      "mono": "jetbrains_mono",
+      "notes": "Use serif display carefully, then anchor body text with a restrained sans."
+    }
   }
 }
