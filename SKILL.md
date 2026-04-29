@@ -1,6 +1,6 @@
 ---
 name: ui-designer
-description: Choose the best UI design system, or a deliberate combination of systems, for web or app interfaces. Use for dashboards, admin panels, internal tools, CMS, SaaS, websites, component theming, color systems, and frontend visual direction across Ant Design, Fluent, Carbon, Atlassian, Apple HIG, Material You, Polaris, Minimalism, Glassmorphism, Neo-Brutalism, Swiss, and related systems.
+description: Choose the best UI design system, or a deliberate combination of systems, for web or app interfaces. Use for dashboards, admin panels, internal tools, CMS, SaaS, websites, component theming, color systems, and frontend visual direction across Ant Design, Fluent, Carbon, Atlassian, Apple HIG, Material You, Polaris, Minimalism, Glassmorphism, Neo-Brutalism, Swiss, Swiss-Archival, and related systems.
 ---
 
 # UI Designer Skill
@@ -23,7 +23,8 @@ Use this skill when the user needs interface direction, design-system selection,
 - Apple platform-native feel: prefer `apple-hig`.
 - Android or modern adaptive UI: prefer `material`.
 - Commerce and merchant tooling: prefer `polaris`.
-- Content, editorial, portfolio, typography-led: prefer `minimal` or `swiss`.
+- Content, editorial, portfolio, typography-led: prefer `minimal`, `swiss`, or `swiss-archival`.
+- Digital archives, museum sites, academic platforms, research tools: prefer `swiss-archival`.
 - Expressive or experimental branding: prefer `neo-brutalism`, `glass`, `claymorphism`, `skeuomorphism`, or `neo-m3`.
 
 2. Check complexity.
@@ -91,11 +92,11 @@ If Ant wins, use it for:
 Use `scripts/apply_ui_rules.py` when the project needs persistent `.cursorrules` guidance.
 
 ```bash
-python3 scripts/apply_ui_rules.py --style [fluent|ant|carbon|atlassian|apple-hig|polaris|material|minimal|glass|neumorphism|neo-brutalism|claymorphism|skeuomorphism|swiss|m3-pastel|neo-m3] --palette [pastel|dark|vibrant|mono]
+python3 scripts/apply_ui_rules.py --style [fluent|ant|carbon|atlassian|apple-hig|polaris|material|minimal|glass|neumorphism|neo-brutalism|claymorphism|skeuomorphism|swiss|swiss-archival|m3-pastel|neo-m3] --palette [pastel|dark|vibrant|mono]
 ```
 
 ## References
 
 - Main map: [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
-- System details: `references/ant-design.md`, `references/carbon-design.md`, `references/fluent-design.md`, `references/atlassian-design.md`, `references/apple-hig.md`, `references/material-you.md`, `references/shopify-polaris.md`, `references/minimalism.md`, `references/swiss-design.md`, `references/neo-brutalism.md`, `references/glassmorphism.md`, `references/claymorphism.md`, `references/skeuomorphism.md`, `references/neo-m3-hybrid.md`, `references/m3-pastel-glass.md`
+- System details: `references/ant-design.md`, `references/carbon-design.md`, `references/fluent-design.md`, `references/atlassian-design.md`, `references/apple-hig.md`, `references/material-you.md`, `references/shopify-polaris.md`, `references/minimalism.md`, `references/swiss-design.md`, `references/swiss-archival.md`, `references/neo-brutalism.md`, `references/glassmorphism.md`, `references/claymorphism.md`, `references/skeuomorphism.md`, `references/neo-m3-hybrid.md`, `references/m3-pastel-glass.md`
 - Page archetypes: `assets/archetypes/dashboard.md`, `assets/archetypes/settings.md`, `assets/archetypes/table-detail.md`, `assets/archetypes/marketing-hero.md`, `assets/archetypes/editorial-landing.md`

@@ -31,7 +31,8 @@ Use this decision rule:
 | Admin panel, CMS, internal tool, back-office | `ant`, `carbon`, `atlassian` | `references/ant-design.md` |
 | Collaboration or project management | `atlassian`, `carbon` | `references/atlassian-design.md` |
 | Merchant or commerce operations | `polaris`, `ant` | `references/shopify-polaris.md` |
-| Content, editorial, portfolio, typography-led site | `minimal`, `swiss`, `neo-m3` | `references/minimalism.md` |
+| Content, editorial, portfolio, typography-led site | `minimal`, `swiss`, `swiss-archival`, `neo-m3` | `references/minimalism.md` |
+| Digital archive, museum, academic, research platform | `swiss-archival`, `swiss` | `references/swiss-archival.md` |
 | Expressive or experimental brand surface | `neo-brutalism`, `glass`, `claymorphism`, `neo-m3` | `references/neo-brutalism.md` |
 | Luxury, nostalgic, tactile product | `skeuomorphism` | `references/skeuomorphism.md` |
 
@@ -49,6 +50,7 @@ Use this decision rule:
 | `m3-pastel` | soft SaaS, creative tools | medium | medium-high | medium | material structure with gentler tone |
 | `minimal` | content, portfolio, clean SaaS | low-medium | medium | medium | strongest when restraint matters |
 | `swiss` | editorial, professional typography systems | low-medium | high | medium | strongest for grid and type clarity |
+| `swiss-archival` | digital archive, museum, academic, research | medium | very high | medium | museum-grade tactile aesthetic with dual-font system, noise texture, and keyboard-first interaction |
 | `glass` | hero, marketing, modern branded UI | low-medium | high | low-medium | poor choice for dense workflows alone |
 | `neumorphism` | tactile niche controls | low | medium | low | do not use for dense enterprise UI |
 | `claymorphism` | playful consumer UI | low | high | low-medium | use for simple friendly surfaces |
@@ -96,5 +98,5 @@ After choosing a system, route to the closest page archetype:
 ## Apply Command
 
 ```bash
-python3 scripts/apply_ui_rules.py --style [fluent|ant|carbon|atlassian|apple-hig|polaris|material|minimal|glass|neumorphism|neo-brutalism|claymorphism|skeuomorphism|swiss|m3-pastel|neo-m3] --palette [pastel|dark|vibrant|mono]
+python3 scripts/apply_ui_rules.py --style [fluent|ant|carbon|atlassian|apple-hig|polaris|material|minimal|glass|neumorphism|neo-brutalism|claymorphism|skeuomorphism|swiss|swiss-archival|m3-pastel|neo-m3] --palette [pastel|dark|vibrant|mono]
 ```
