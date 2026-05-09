@@ -141,6 +141,16 @@ All shortcuts disabled in input/textarea contexts.
 
 ---
 
+## Parametric specimen decorator
+
+When the interface needs a **Swiss-Archival-aligned ornament** (generative specimen, technical IDs, glass vitrine, exportable SVG) without breaking museum-label discipline, the **specimen element** is defined by the geometry ruleset in:
+
+`assets/decorators/swiss-archival-specimen-decorator.md`
+
+That document extracts the logic: deterministic seed from a string, Gielis superformula sampling, layered primary and interference paths, orbital satellites, construction guides, and SVG captions (`SPEC_ID`, `MORPH_DNA`). Implement in any stack; tune constants and palette while keeping the ruleset coherent. Use it as a **decorator** for heroes, vault intros, or branded empty states—not as the sole layout system for operational screens.
+
+---
+
 ## Anti-Patterns
 
 - Border radius > 12px on primary surfaces
@@ -165,3 +175,5 @@ All shortcuts disabled in input/textarea contexts.
 ## Reference
 
 **Components:** `assets/components/swiss-archival-components.md`
+
+**Decorators:** `assets/decorators/swiss-archival-specimen-decorator.md`

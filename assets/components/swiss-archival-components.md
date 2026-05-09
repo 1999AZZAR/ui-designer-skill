@@ -296,3 +296,13 @@ Glassmorphic modal with formats: APA, MLA, BibTeX, TECHNICAL_REF.
   --z-command: 400;
 }
 ```
+
+---
+
+## Parametric specimen decorator
+
+For generative SVG vitrines, the **specimen** shape is defined by the geometry ruleset (superformula layers, interference paths, orbits, deterministic SID) in:
+
+`assets/decorators/swiss-archival-specimen-decorator.md`
+
+Use that asset when Swiss-Archival needs a decorative specimen layer; keep forms, tables, and reading layout on the components above.
