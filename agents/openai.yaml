@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Designer"
+  short_description: "Expert UI design system selection and implementation."
+  default_prompt: "Design a modern dashboard using Material You."
