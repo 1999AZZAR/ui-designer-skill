@@ -100,3 +100,25 @@ After choosing a system, route to the closest page archetype:
 ```bash
 python3 scripts/apply_ui_rules.py --style [fluent|ant|carbon|atlassian|apple-hig|polaris|material|minimal|glass|neumorphism|neo-brutalism|claymorphism|skeuomorphism|swiss|swiss-archival|m3-pastel|neo-m3] --palette [pastel|dark|vibrant|mono]
 ```
+
+## Palette Sourcing
+
+Optional. When the project needs a fresh swatch (or wants to explore alternatives to a built-in palette), invoke the **`color-palette-hunter`** skill (Color Hunt scraper; supports `--trending`, `--popular`, `--random`, `--theme <name>`, `--query <text>`, output `json|css|tailwind|html`). The skill is **not required** — if it is not installed in the current environment, skip the step and continue with the built-in palette for the chosen system.
+
+Quick usage (path resolved by the skill loader):
+
+```bash
+# trending
+color-palette-hunter/scripts/fetch-palette.sh --trending --limit 5
+
+# by theme (modern, pastel, vibrant, dark, ...)
+color-palette-hunter/scripts/fetch-palette.sh --theme pastel --limit 10
+
+# free-form query
+color-palette-hunter/scripts/fetch-palette.sh --query "warm archival" --format tailwind
+
+# save as CSS variables
+color-palette-hunter/scripts/fetch-palette.sh --trending --format css --output palette.css
+```
+
+Pick a winner, drop the hex list into `assets/palettes.json` under `systems.<style>`, and update the matching `references/<style>.md` color table. For Swiss-Archival specifically, also write the candidate into `assets/swiss-archival/` in the same shape (PNG / SVG / ASE / SCSS / TXT / Tailscale) so the loader index stays consistent.

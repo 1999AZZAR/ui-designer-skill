@@ -16,6 +16,7 @@ Use this skill when the user needs interface direction, design-system selection,
 - Use Font Awesome 6 when the project needs a general icon set.
 - For **Swiss-Archival** specimen decorators, follow the **geometry ruleset** in `assets/decorators/swiss-archival-specimen-decorator.md` (seed, superformula paths, layers, orbits, captions); implement however you like, but preserve that logic for the decorator SVG.
 - For **Swiss-Archival** color tokens, source hex values from `assets/swiss-archival/` (Coolors palette + Tailscale 50–950 ramps). Do not invent ad-hoc lighten/darken — pick a Tailscale stop. The `assets/swiss-archival/README.md` is the loader index (SCSS / CSS vars / ASE / Tailscale JSON).
+- For **palette sourcing** (a fresh swatch for a new project, refreshing the colors of a chosen system, or exploring alternatives before locking in), invoke the **`color-palette-hunter`** skill (Color Hunt scraper; `--trending|--popular|--theme|--query`, output `json|css|tailwind|html`). Optional: skip the step cleanly if the skill is not installed. Use it to propose 2–3 candidate palettes, then drop the winner into `assets/palettes.json` and into the chosen system's `references/` doc.
 
 ## Decision Flow
 
