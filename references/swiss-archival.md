@@ -25,7 +25,7 @@ A design language born from the intersection of Swiss International Typographic 
 | Property | Value |
 |---|---|
 | **Border Radius** | 4px (sm), 6px (md), 12px (lg). Subtle, never playful. Max on primary surfaces is 6px. |
-| **Borders** | 1px solid `#DDD5C5` (Muted). Cards, inputs, dividers. Blueprint grid uses RGBA(191,182,166,0.2). |
+| **Borders** | 1px solid `#CBC3B7` (Dust Grey — Muted). Cards, inputs, dividers. Blueprint grid uses RGBA(191,182,166,0.2). |
 | **Shadows** | Minimal. Depth via borders and background contrast. Only for overlays: dropdowns (0 1px 3px), modals (0 4px 12px), command palette (0 8px 24px). |
 | **Typography** | Dual-layer: Plus Jakarta Sans (narrative) + JetBrains Mono (technical/metadata). |
 | **Font Weight** | 700 for headings, 400/500 for body, 600 for labels/metadata. |
@@ -38,23 +38,40 @@ A design language born from the intersection of Swiss International Typographic 
 
 ## Color System
 
-| Token | Hex | Role |
-|---|---|---|
-| Background | `#E8E0D0` | Warm Cream — primary canvas |
-| Foreground | `#2A2520` | Deep Coffee — core content |
-| Card / Surface | `#EFE9DC` | Soft Pearl — elevation |
-| Accent | `#8B1A1A` | Burgundy — focus & action |
-| Muted | `#DDD5C5` | Earthy Neutral — borders, structure |
-| Muted FG | `#7A7068` | Ash Gray — metadata, labels |
-| Accent Hover | `#A02020` | Lightened 15% |
-| Accent Active | `#6B1212` | Darkened 20% |
-| Success | `#3A6B3A` | Muted green |
-| Warning | `#8B6B1A` | Earthy amber |
+Source palette: `assets/swiss-archival/` (Coolors export + Tailscale 50–950 ramps). Use `assets/swiss-archival/README.md` as the loader index.
+
+| Token | Hex | Source | Role |
+|---|---|---|---|
+| Background | `#EFE9DC` | soft-linen 100 | Warm Linen — primary canvas |
+| Surface | `#EEE8DB` | soft-linen-2 | Soft Pearl — card elevation |
+| Foreground | `#2A2520` | carbon-black | Deep Coffee — core content |
+| Accent | `#9C3D3B` | brown-red 500 | Burgundy — focus & action |
+| Accent Hover | `#943A38` | brown-red 600 (Tailscale) | +1 step |
+| Accent Active | `#6F2B2A` | brown-red 700 (Tailscale) | +2 step |
+| Muted | `#CBC3B7` | dust-grey 100 | Earthy Neutral — borders, dividers |
+| Muted FG | `#A49C92` | grey-olive 100 | Ash Olive — metadata, labels |
+| Muted FG Strong | `#6F675D` | grey-olive 600 (Tailscale) | use when muted-fg needs AA on small text |
+| Success | `#3A6B3A` | — | Muted green (state, not in core palette) |
+| Warning | `#8B6B1A` | — | Earthy amber (state, not in core palette) |
 
 **Contrast Ratios (WCAG 2.1 AA):**
-- Foreground on Background: 10.2:1 (AAA)
-- Accent on Background: 6.1:1 (AA)
-- Muted FG on Background: 3.8:1 (AA large text only — use at >= 14px or 600 weight)
+- Foreground `#2A2520` on Background `#EFE9DC`: ~9.5:1 (AAA)
+- Accent `#9C3D3B` on Background `#EFE9DC`: ~5.2:1 (AA normal text)
+- Muted FG `#A49C92` on Background `#EFE9DC`: ~2.1:1 — use **only** for text ≥ 18px (or 14px @ 600 weight), or switch to `Muted FG Strong` `#6F675D` (~4.4:1, AA normal) for small UI labels.
+- Muted `#CBC3B7` on Background `#EFE9DC`: ~1.5:1 — non-text only (borders, dividers, decorative strokes).
+
+**Tailscale ramps.** The full 50–950 stops for each base color live in `assets/swiss-archival/tailscale.txt`. Use them for hover, active, focus-ring, and elevation states instead of ad-hoc lighten/darken. Recommended stop choices:
+
+| State | Linen | Dust | Olive | Carbon | Brown-Red |
+|---|---|---|---|---|---|
+| Surface | 100 | — | — | — | — |
+| Hover surface | 2 (`#eee8db`) | — | — | — | — |
+| Border | — | 100 | — | — | — |
+| Muted FG (small) | — | — | 600 | — | — |
+| Body text | — | — | — | 100 | — |
+| Accent base | — | — | — | — | 500 |
+| Accent hover | — | — | — | — | 600 |
+| Accent active | — | — | — | — | 700 |
 
 ---
 
@@ -112,9 +129,9 @@ A design language born from the intersection of Swiss International Typographic 
 ## Glassmorphic Overlays
 
 ```css
-background: rgba(232, 224, 208, 0.85);
+background: rgba(239, 233, 220, 0.85);
 backdrop-filter: blur(12px);
-border: 1px solid #DDD5C5;
+border: 1px solid #CBC3B7;
 border-radius: 12px;
 box-shadow: 0 4px 12px rgba(42, 37, 32, 0.12);
 ```
@@ -173,6 +190,8 @@ That document extracts the logic: deterministic seed from a string, Gielis super
 ---
 
 ## Reference
+
+**Palette source files:** `assets/swiss-archival/` — `SWISS-ARCHIVAL.png`, `palette.svg`, `palette.ase`, `palette.scss`, `palette.txt`, `tailscale.txt`. See `assets/swiss-archival/README.md` for the loader index and token mapping.
 
 **Components:** `assets/components/swiss-archival-components.md`
 

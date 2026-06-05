@@ -223,6 +223,20 @@
       "lavender": "#E6E6FA",
       "text": "#F3F4F6"
     },
+    "swiss_archival": {
+      "canvas": "#EFE9DC",
+      "surface": "#EEE8DB",
+      "border": "#CBC3B7",
+      "text": "#2A2520",
+      "muted": "#A49C92",
+      "muted_fg_strong": "#6F675D",
+      "primary": "#9C3D3B",
+      "primary_hover": "#943A38",
+      "primary_active": "#6F2B2A",
+      "success": "#3A6B3A",
+      "warning": "#8B6B1A",
+      "_source": "assets/swiss-archival/ (Coolors export + Tailscale 50-950)"
+    },
     "skeuomorphism": {
       "leather_dark": "#3E2723",
       "leather_mid": "#5D4037",

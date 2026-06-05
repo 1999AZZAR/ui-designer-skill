@@ -15,6 +15,7 @@ Use this skill when the user needs interface direction, design-system selection,
 - Avoid generic AI aesthetics: no default purple/indigo gradients, no glossy filler, no emoji in functional UI.
 - Use Font Awesome 6 when the project needs a general icon set.
 - For **Swiss-Archival** specimen decorators, follow the **geometry ruleset** in `assets/decorators/swiss-archival-specimen-decorator.md` (seed, superformula paths, layers, orbits, captions); implement however you like, but preserve that logic for the decorator SVG.
+- For **Swiss-Archival** color tokens, source hex values from `assets/swiss-archival/` (Coolors palette + Tailscale 50–950 ramps). Do not invent ad-hoc lighten/darken — pick a Tailscale stop. The `assets/swiss-archival/README.md` is the loader index (SCSS / CSS vars / ASE / Tailscale JSON).
 
 ## Decision Flow
 
@@ -101,4 +102,5 @@ python3 scripts/apply_ui_rules.py --style [fluent|ant|carbon|atlassian|apple-hig
 - Main map: [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
 - System details: `references/ant-design.md`, `references/carbon-design.md`, `references/fluent-design.md`, `references/atlassian-design.md`, `references/apple-hig.md`, `references/material-you.md`, `references/shopify-polaris.md`, `references/minimalism.md`, `references/swiss-design.md`, `references/swiss-archival.md`, `references/neo-brutalism.md`, `references/glassmorphism.md`, `references/claymorphism.md`, `references/skeuomorphism.md`, `references/neo-m3-hybrid.md`, `references/m3-pastel-glass.md`
 - Page archetypes: `assets/archetypes/dashboard.md`, `assets/archetypes/settings.md`, `assets/archetypes/table-detail.md`, `assets/archetypes/marketing-hero.md`, `assets/archetypes/editorial-landing.md`
+- Swiss-Archival palette source files: `assets/swiss-archival/` — see `assets/swiss-archival/README.md` for the loader index (PNG, SVG, ASE, SCSS, TXT, Tailscale JSON).
 - Swiss-Archival decorators: `assets/decorators/swiss-archival-specimen-decorator.md`
