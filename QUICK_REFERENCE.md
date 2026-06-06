@@ -27,7 +27,7 @@ Use this decision rule:
 |---------|-------------------|------------|
 | Windows or Microsoft-adjacent product | `fluent`, `carbon` | `references/fluent-design.md` |
 | iOS or macOS-native feel | `apple-hig` | `references/apple-hig.md` |
-| Android or adaptive modern app | `material`, `m3-pastel` | `references/material-you.md` |
+| Android or adaptive modern app | `material`, `m3-pastel` | `references/material-you.md` (material), `references/m3-pastel-glass.md` (m3-pastel) |
 | Admin panel, CMS, internal tool, back-office | `ant`, `carbon`, `atlassian` | `references/ant-design.md` |
 | Collaboration or project management | `atlassian`, `carbon` | `references/atlassian-design.md` |
 | Merchant or commerce operations | `polaris`, `ant` | `references/shopify-polaris.md` |
@@ -121,4 +121,4 @@ color-palette-hunter/scripts/fetch-palette.sh --query "warm archival" --format t
 color-palette-hunter/scripts/fetch-palette.sh --trending --format css --output palette.css
 ```
 
-Pick a winner, drop the hex list into `assets/palettes.json` under `systems.<style>`, and update the matching `references/<style>.md` color table. For Swiss-Archival specifically, also write the candidate into `assets/swiss-archival/` in the same shape (PNG / SVG / ASE / SCSS / TXT / Tailscale) so the loader index stays consistent.
+Pick a winner, drop the hex list into `assets/palettes.json` under `systems.<style>`, and update the matching `references/<style>.md` color table. For Swiss-Archival specifically, also write the candidate into `assets/palettes/swiss-archival/` in the same shape (PNG / SVG / ASE / SCSS / TXT / Tailscale) so the loader index stays consistent. For M3 Pastel, write the candidate into `assets/palettes/m3-pastel/<n>/` (one numbered folder per candidate swatch: SVG / ASE / SCSS / TXT).

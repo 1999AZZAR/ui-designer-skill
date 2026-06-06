@@ -1,0 +1,36 @@
+/* Coolors Exported Palette - https://coolors.co/fec5bb-fcd5ce-fae1dd-f8edeb-e8e8e4-d8e2dc-ece4db-ffe5d9-ffd7ba-fec89a */
+
+- CSV
+
+fec5bb,fcd5ce,fae1dd,f8edeb,e8e8e4,d8e2dc,ece4db,ffe5d9,ffd7ba,fec89a
+
+- With #
+
+#fec5bb, #fcd5ce, #fae1dd, #f8edeb, #e8e8e4, #d8e2dc, #ece4db, #ffe5d9, #ffd7ba, #fec89a
+
+- Array
+
+["fec5bb","fcd5ce","fae1dd","f8edeb","e8e8e4","d8e2dc","ece4db","ffe5d9","ffd7ba","fec89a"]
+
+- Object
+
+{"Powder Blush":"fec5bb","Almond Silk":"fcd5ce","Soft Blush":"fae1dd","Seashell":"f8edeb","Alabaster Grey":"e8e8e4","Alabaster Grey 2":"d8e2dc","Linen":"ece4db","Powder Petal":"ffe5d9","Peach Fuzz":"ffd7ba","Peach Glow":"fec89a"}
+
+- Extended Array
+
+[{"name":"Powder Blush","hex":"fec5bb","rgb":[254,197,187],"cmyk":[0,22,26,0],"hsb":[9,26,100],"hsl":[9,97,86],"lab":[84,19,13]},{"name":"Almond Silk","hex":"fcd5ce","rgb":[252,213,206],"cmyk":[0,15,18,1],"hsb":[9,18,99],"hsl":[9,88,90],"lab":[88,13,9]},{"name":"Soft Blush","hex":"fae1dd","rgb":[250,225,221],"cmyk":[0,10,12,2],"hsb":[8,12,98],"hsl":[8,74,92],"lab":[91,8,5]},{"name":"Seashell","hex":"f8edeb","rgb":[248,237,235],"cmyk":[0,4,5,3],"hsb":[9,5,97],"hsl":[9,48,95],"lab":[95,3,2]},{"name":"Alabaster Grey","hex":"e8e8e4","rgb":[232,232,228],"cmyk":[0,0,2,9],"hsb":[60,2,91],"hsl":[60,8,90],"lab":[92,-1,2]},{"name":"Alabaster Grey","hex":"d8e2dc","rgb":[216,226,220],"cmyk":[4,0,3,11],"hsb":[144,4,89],"hsl":[144,15,87],"lab":[89,-4,2]},{"name":"Linen","hex":"ece4db","rgb":[236,228,219],"cmyk":[0,3,7,7],"hsb":[32,7,93],"hsl":[32,31,89],"lab":[91,1,5]},{"name":"Powder Petal","hex":"ffe5d9","rgb":[255,229,217],"cmyk":[0,10,15,0],"hsb":[19,15,100],"hsl":[19,100,93],"lab":[93,7,9]},{"name":"Peach Fuzz","hex":"ffd7ba","rgb":[255,215,186],"cmyk":[0,16,27,0],"hsb":[25,27,100],"hsl":[25,100,86],"lab":[89,10,20]},{"name":"Peach Glow","hex":"fec89a","rgb":[254,200,154],"cmyk":[0,21,39,0],"hsb":[28,39,100],"hsl":[28,98,80],"lab":[84,13,30]}]
+
+- XML
+
+<palette>
+  <color name="Powder Blush" hex="fec5bb" r="254" g="197" b="187" />
+  <color name="Almond Silk" hex="fcd5ce" r="252" g="213" b="206" />
+  <color name="Soft Blush" hex="fae1dd" r="250" g="225" b="221" />
+  <color name="Seashell" hex="f8edeb" r="248" g="237" b="235" />
+  <color name="Alabaster Grey" hex="e8e8e4" r="232" g="232" b="228" />
+  <color name="Alabaster Grey" hex="d8e2dc" r="216" g="226" b="220" />
+  <color name="Linen" hex="ece4db" r="236" g="228" b="219" />
+  <color name="Powder Petal" hex="ffe5d9" r="255" g="229" b="217" />
+  <color name="Peach Fuzz" hex="ffd7ba" r="255" g="215" b="186" />
+  <color name="Peach Glow" hex="fec89a" r="254" g="200" b="154" />
+</palette>

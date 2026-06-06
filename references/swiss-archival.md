@@ -38,7 +38,7 @@ A design language born from the intersection of Swiss International Typographic 
 
 ## Color System
 
-Source palette: `assets/swiss-archival/` (Coolors export + Tailscale 50–950 ramps). Use `assets/swiss-archival/README.md` as the loader index.
+Source palette: `assets/palettes/swiss-archival/` (Coolors export + Tailscale 50–950 ramps). Use `assets/palettes/swiss-archival/README.md` as the loader index.
 
 | Token | Hex | Source | Role |
 |---|---|---|---|
@@ -60,7 +60,7 @@ Source palette: `assets/swiss-archival/` (Coolors export + Tailscale 50–950 ra
 - Muted FG `#A49C92` on Background `#EFE9DC`: ~2.1:1 — use **only** for text ≥ 18px (or 14px @ 600 weight), or switch to `Muted FG Strong` `#6F675D` (~4.4:1, AA normal) for small UI labels.
 - Muted `#CBC3B7` on Background `#EFE9DC`: ~1.5:1 — non-text only (borders, dividers, decorative strokes).
 
-**Tailscale ramps.** The full 50–950 stops for each base color live in `assets/swiss-archival/tailscale.txt`. Use them for hover, active, focus-ring, and elevation states instead of ad-hoc lighten/darken. Recommended stop choices:
+**Tailscale ramps.** The full 50–950 stops for each base color live in `assets/palettes/swiss-archival/tailscale.txt`. Use them for hover, active, focus-ring, and elevation states instead of ad-hoc lighten/darken. Recommended stop choices:
 
 | State | Linen | Dust | Olive | Carbon | Brown-Red |
 |---|---|---|---|---|---|
@@ -191,7 +191,7 @@ That document extracts the logic: deterministic seed from a string, Gielis super
 
 ## Reference
 
-**Palette source files:** `assets/swiss-archival/` — `SWISS-ARCHIVAL.png`, `palette.svg`, `palette.ase`, `palette.scss`, `palette.txt`, `tailscale.txt`. See `assets/swiss-archival/README.md` for the loader index and token mapping.
+**Palette source files:** `assets/palettes/swiss-archival/` — `SWISS-ARCHIVAL.png`, `palette.svg`, `palette.ase`, `palette.scss`, `palette.txt`, `tailscale.txt`. See `assets/palettes/swiss-archival/README.md` for the loader index and token mapping.
 
 **Components:** `assets/components/swiss-archival-components.md`
 

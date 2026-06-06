@@ -1,0 +1,36 @@
+/* Coolors Exported Palette - https://coolors.co/e8a598-ffb5a7-fec5bb-fcd5ce-fae1dd-f8edeb-f9e5d8-f9dcc4-fcd2af-fec89a */
+
+- CSV
+
+e8a598,ffb5a7,fec5bb,fcd5ce,fae1dd,f8edeb,f9e5d8,f9dcc4,fcd2af,fec89a
+
+- With #
+
+#e8a598, #ffb5a7, #fec5bb, #fcd5ce, #fae1dd, #f8edeb, #f9e5d8, #f9dcc4, #fcd2af, #fec89a
+
+- Array
+
+["e8a598","ffb5a7","fec5bb","fcd5ce","fae1dd","f8edeb","f9e5d8","f9dcc4","fcd2af","fec89a"]
+
+- Object
+
+{"Powder Blush":"e8a598","Powder Blush 2":"ffb5a7","Powder Blush 3":"fec5bb","Almond Silk":"fcd5ce","Soft Blush":"fae1dd","Seashell":"f8edeb","Powder Petal":"f9e5d8","Powder Petal 2":"f9dcc4","Soft Apricot":"fcd2af","Peach Glow":"fec89a"}
+
+- Extended Array
+
+[{"name":"Powder Blush","hex":"e8a598","rgb":[232,165,152],"cmyk":[0,29,34,9],"hsb":[10,34,91],"hsl":[10,63,75],"lab":[74,23,17]},{"name":"Powder Blush","hex":"ffb5a7","rgb":[255,181,167],"cmyk":[0,29,35,0],"hsb":[10,35,100],"hsl":[10,100,83],"lab":[80,25,18]},{"name":"Powder Blush","hex":"fec5bb","rgb":[254,197,187],"cmyk":[0,22,26,0],"hsb":[9,26,100],"hsl":[9,97,86],"lab":[84,19,13]},{"name":"Almond Silk","hex":"fcd5ce","rgb":[252,213,206],"cmyk":[0,15,18,1],"hsb":[9,18,99],"hsl":[9,88,90],"lab":[88,13,9]},{"name":"Soft Blush","hex":"fae1dd","rgb":[250,225,221],"cmyk":[0,10,12,2],"hsb":[8,12,98],"hsl":[8,74,92],"lab":[91,8,5]},{"name":"Seashell","hex":"f8edeb","rgb":[248,237,235],"cmyk":[0,4,5,3],"hsb":[9,5,97],"hsl":[9,48,95],"lab":[95,3,2]},{"name":"Powder Petal","hex":"f9e5d8","rgb":[249,229,216],"cmyk":[0,8,13,2],"hsb":[24,13,98],"hsl":[24,73,91],"lab":[92,5,9]},{"name":"Powder Petal","hex":"f9dcc4","rgb":[249,220,196],"cmyk":[0,12,21,2],"hsb":[27,21,98],"hsl":[27,82,87],"lab":[90,6,15]},{"name":"Soft Apricot","hex":"fcd2af","rgb":[252,210,175],"cmyk":[0,17,31,1],"hsb":[27,31,99],"hsl":[27,93,84],"lab":[87,10,23]},{"name":"Peach Glow","hex":"fec89a","rgb":[254,200,154],"cmyk":[0,21,39,0],"hsb":[28,39,100],"hsl":[28,98,80],"lab":[84,13,30]}]
+
+- XML
+
+<palette>
+  <color name="Powder Blush" hex="e8a598" r="232" g="165" b="152" />
+  <color name="Powder Blush" hex="ffb5a7" r="255" g="181" b="167" />
+  <color name="Powder Blush" hex="fec5bb" r="254" g="197" b="187" />
+  <color name="Almond Silk" hex="fcd5ce" r="252" g="213" b="206" />
+  <color name="Soft Blush" hex="fae1dd" r="250" g="225" b="221" />
+  <color name="Seashell" hex="f8edeb" r="248" g="237" b="235" />
+  <color name="Powder Petal" hex="f9e5d8" r="249" g="229" b="216" />
+  <color name="Powder Petal" hex="f9dcc4" r="249" g="220" b="196" />
+  <color name="Soft Apricot" hex="fcd2af" r="252" g="210" b="175" />
+  <color name="Peach Glow" hex="fec89a" r="254" g="200" b="154" />
+</palette>

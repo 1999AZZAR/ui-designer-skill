@@ -156,7 +156,8 @@
       "canvas": "#F8FAFC",
       "surface": "rgba(255,255,255,0.72)",
       "border": "rgba(255,255,255,0.18)",
-      "text": "#1E293B"
+      "text": "#1E293B",
+      "_source": "assets/palettes/m3-pastel/<n>/ (4 candidate Coolors swatches: 1=mixed multicolor, 2=warm blush, 3=cool soft, 4=soft cream)"
     },
     "minimal": {
       "canvas": "#FFFFFF",
@@ -235,7 +236,7 @@
       "primary_active": "#6F2B2A",
       "success": "#3A6B3A",
       "warning": "#8B6B1A",
-      "_source": "assets/swiss-archival/ (Coolors export + Tailscale 50-950)"
+      "_source": "assets/palettes/swiss-archival/ (Coolors export + Tailscale 50-950)"
     },
     "skeuomorphism": {
       "leather_dark": "#3E2723",

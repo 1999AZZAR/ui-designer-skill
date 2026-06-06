@@ -1,0 +1,35 @@
+/* Coolors Exported Palette - https://coolors.co/eae4e9-fff1e6-fde2e4-fad2e1-e2ece9-bee1e6-f0efeb-dfe7fd-cddafd */
+
+- CSV
+
+eae4e9,fff1e6,fde2e4,fad2e1,e2ece9,bee1e6,f0efeb,dfe7fd,cddafd
+
+- With #
+
+#eae4e9, #fff1e6, #fde2e4, #fad2e1, #e2ece9, #bee1e6, #f0efeb, #dfe7fd, #cddafd
+
+- Array
+
+["eae4e9","fff1e6","fde2e4","fad2e1","e2ece9","bee1e6","f0efeb","dfe7fd","cddafd"]
+
+- Object
+
+{"Lavender Mist":"eae4e9","Linen":"fff1e6","Soft Blush":"fde2e4","Petal Frost":"fad2e1","Mint Cream":"e2ece9","Light Blue":"bee1e6","Parchment":"f0efeb","Lavender":"dfe7fd","Periwinkle":"cddafd"}
+
+- Extended Array
+
+[{"name":"Lavender Mist","hex":"eae4e9","rgb":[234,228,233],"cmyk":[0,3,0,8],"hsb":[310,3,92],"hsl":[310,12,91],"lab":[91,3,-2]},{"name":"Linen","hex":"fff1e6","rgb":[255,241,230],"cmyk":[0,5,10,0],"hsb":[26,10,100],"hsl":[26,100,95],"lab":[96,3,7]},{"name":"Soft Blush","hex":"fde2e4","rgb":[253,226,228],"cmyk":[0,11,10,1],"hsb":[356,11,99],"hsl":[356,87,94],"lab":[92,10,2]},{"name":"Petal Frost","hex":"fad2e1","rgb":[250,210,225],"cmyk":[0,16,10,2],"hsb":[338,16,98],"hsl":[338,80,90],"lab":[88,16,-2]},{"name":"Mint Cream","hex":"e2ece9","rgb":[226,236,233],"cmyk":[4,0,1,7],"hsb":[162,4,93],"hsl":[162,21,91],"lab":[93,-4,0]},{"name":"Light Blue","hex":"bee1e6","rgb":[190,225,230],"cmyk":[17,2,0,10],"hsb":[188,17,90],"hsl":[188,44,82],"lab":[87,-10,-6]},{"name":"Parchment","hex":"f0efeb","rgb":[240,239,235],"cmyk":[0,0,2,6],"hsb":[48,2,94],"hsl":[48,14,93],"lab":[94,0,2]},{"name":"Lavender","hex":"dfe7fd","rgb":[223,231,253],"cmyk":[12,9,0,1],"hsb":[224,12,99],"hsl":[224,88,93],"lab":[92,2,-12]},{"name":"Periwinkle","hex":"cddafd","rgb":[205,218,253],"cmyk":[19,14,0,1],"hsb":[224,19,99],"hsl":[224,92,90],"lab":[87,3,-19]}]
+
+- XML
+
+<palette>
+  <color name="Lavender Mist" hex="eae4e9" r="234" g="228" b="233" />
+  <color name="Linen" hex="fff1e6" r="255" g="241" b="230" />
+  <color name="Soft Blush" hex="fde2e4" r="253" g="226" b="228" />
+  <color name="Petal Frost" hex="fad2e1" r="250" g="210" b="225" />
+  <color name="Mint Cream" hex="e2ece9" r="226" g="236" b="233" />
+  <color name="Light Blue" hex="bee1e6" r="190" g="225" b="230" />
+  <color name="Parchment" hex="f0efeb" r="240" g="239" b="235" />
+  <color name="Lavender" hex="dfe7fd" r="223" g="231" b="253" />
+  <color name="Periwinkle" hex="cddafd" r="205" g="218" b="253" />
+</palette>

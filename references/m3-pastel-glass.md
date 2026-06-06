@@ -24,6 +24,10 @@ A premium design system combining Material You (M3) geometry, Glassmorphism dept
 
 ## Color Palettes (The Pastel Spectrum)
 
+The M3 Pastel Glass system is theme-agnostic. Pick one of the **four candidate swatches** in `assets/palettes/m3-pastel/<n>/` (see `assets/palettes/m3-pastel/README.md` for the full loader index and selection guide), then wire its tokens into the variable layout below.
+
+The two example themes below (Studio Blue, Creative Purple) match the in-line example tokens shipped with the system; the swatch folders are the canonical source of truth.
+
 ### Pastel Blue (The Studio Theme)
 ```css
 :root {
@@ -77,5 +81,7 @@ A premium design system combining Material You (M3) geometry, Glassmorphism dept
 - Stacking Blurs: Avoid more than 3 layers of backdrop-filter for performance.
 
 ## Reference
+
+**Palette source files:** `assets/palettes/m3-pastel/<n>/` — pick one of the four candidate swatches (1–4). See `assets/palettes/m3-pastel/README.md` for the loader index, swatch selection guide, and token mapping.
 
 **Components:** `assets/components/m3-pastel-components.md`

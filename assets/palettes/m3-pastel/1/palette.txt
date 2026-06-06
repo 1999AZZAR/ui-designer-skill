@@ -1,0 +1,36 @@
+/* Coolors Exported Palette - https://coolors.co/e2e2df-d2d2cf-e2cfc4-f7d9c4-faedcb-c9e4de-c6def1-dbcdf0-f2c6de-f9c6c9 */
+
+- CSV
+
+e2e2df,d2d2cf,e2cfc4,f7d9c4,faedcb,c9e4de,c6def1,dbcdf0,f2c6de,f9c6c9
+
+- With #
+
+#e2e2df, #d2d2cf, #e2cfc4, #f7d9c4, #faedcb, #c9e4de, #c6def1, #dbcdf0, #f2c6de, #f9c6c9
+
+- Array
+
+["e2e2df","d2d2cf","e2cfc4","f7d9c4","faedcb","c9e4de","c6def1","dbcdf0","f2c6de","f9c6c9"]
+
+- Object
+
+{"Alabaster Grey":"e2e2df","Dust Grey":"d2d2cf","Powder Petal":"e2cfc4","Powder Petal 2":"f7d9c4","Pearl Beige":"faedcb","Frozen Water":"c9e4de","Pale Sky":"c6def1","Thistle":"dbcdf0","Pastel Petal":"f2c6de","Cotton Rose":"f9c6c9"}
+
+- Extended Array
+
+[{"name":"Alabaster Grey","hex":"e2e2df","rgb":[226,226,223],"cmyk":[0,0,1,11],"hsb":[60,1,89],"hsl":[60,5,88],"lab":[90,-1,1]},{"name":"Dust Grey","hex":"d2d2cf","rgb":[210,210,207],"cmyk":[0,0,1,18],"hsb":[60,1,82],"hsl":[60,3,82],"lab":[84,-1,1]},{"name":"Powder Petal","hex":"e2cfc4","rgb":[226,207,196],"cmyk":[0,8,13,11],"hsb":[22,13,89],"hsl":[22,34,83],"lab":[84,5,8]},{"name":"Powder Petal","hex":"f7d9c4","rgb":[247,217,196],"cmyk":[0,12,21,3],"hsb":[25,21,97],"hsl":[25,76,87],"lab":[89,7,14]},{"name":"Pearl Beige","hex":"faedcb","rgb":[250,237,203],"cmyk":[0,5,19,2],"hsb":[43,19,98],"hsl":[43,82,89],"lab":[94,-1,18]},{"name":"Frozen Water","hex":"c9e4de","rgb":[201,228,222],"cmyk":[12,0,3,11],"hsb":[167,12,89],"hsl":[167,33,84],"lab":[89,-10,0]},{"name":"Pale Sky","hex":"c6def1","rgb":[198,222,241],"cmyk":[18,8,0,5],"hsb":[207,18,95],"hsl":[207,61,86],"lab":[87,-4,-12]},{"name":"Thistle","hex":"dbcdf0","rgb":[219,205,240],"cmyk":[9,15,0,6],"hsb":[264,15,94],"hsl":[264,54,87],"lab":[84,11,-15]},{"name":"Pastel Petal","hex":"f2c6de","rgb":[242,198,222],"cmyk":[0,18,8,5],"hsb":[327,18,95],"hsl":[327,63,86],"lab":[84,19,-6]},{"name":"Cotton Rose","hex":"f9c6c9","rgb":[249,198,201],"cmyk":[0,20,19,2],"hsb":[356,20,98],"hsl":[356,81,88],"lab":[84,19,5]}]
+
+- XML
+
+<palette>
+  <color name="Alabaster Grey" hex="e2e2df" r="226" g="226" b="223" />
+  <color name="Dust Grey" hex="d2d2cf" r="210" g="210" b="207" />
+  <color name="Powder Petal" hex="e2cfc4" r="226" g="207" b="196" />
+  <color name="Powder Petal" hex="f7d9c4" r="247" g="217" b="196" />
+  <color name="Pearl Beige" hex="faedcb" r="250" g="237" b="203" />
+  <color name="Frozen Water" hex="c9e4de" r="201" g="228" b="222" />
+  <color name="Pale Sky" hex="c6def1" r="198" g="222" b="241" />
+  <color name="Thistle" hex="dbcdf0" r="219" g="205" b="240" />
+  <color name="Pastel Petal" hex="f2c6de" r="242" g="198" b="222" />
+  <color name="Cotton Rose" hex="f9c6c9" r="249" g="198" b="201" />
+</palette>

@@ -63,7 +63,7 @@ Success / warning stay on the muted earth-tone family defined in the reference (
 
 **SCSS:**
 ```scss
-@import './assets/swiss-archival/palette.scss';
+@import './assets/palettes/swiss-archival/palette.scss';
 ```
 
 **CSS variables (paste from `palette.scss`):**
@@ -80,7 +80,7 @@ Success / warning stay on the muted earth-tone family defined in the reference (
 
 **Tailscale (per-color stops):**
 ```js
-import tailscale from './assets/swiss-archival/tailscale.json';
+import tailscale from './assets/palettes/swiss-archival/tailscale.txt';
 const accentHover = tailscale['brown-red'][600];
 ```
 
@@ -88,6 +88,6 @@ const accentHover = tailscale['brown-red'][600];
 
 ## Cross-Reference
 
-- System principles & tokens: `../../references/swiss-archival.md`
-- Component recipes using these tokens: `../components/swiss-archival-components.md`
-- Specimen decorator geometry: `../decorators/swiss-archival-specimen-decorator.md`
+- System principles & tokens: `../../../references/swiss-archival.md`
+- Component recipes using these tokens: `../../components/swiss-archival-components.md`
+- Specimen decorator geometry: `../../decorators/swiss-archival-specimen-decorator.md`

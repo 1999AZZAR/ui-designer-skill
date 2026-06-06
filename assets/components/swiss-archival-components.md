@@ -1,6 +1,6 @@
 # Swiss-Archival Components
 
-Component specifications for the Swiss-Archival design system. All components use CSS custom properties from the system token set. The palette tokens are sourced from `assets/swiss-archival/` — see that folder's `README.md` for the loader index, Tailscale ramps, and ASE/SCSS exports.
+Component specifications for the Swiss-Archival design system. All components use CSS custom properties from the system token set. The palette tokens are sourced from `assets/palettes/swiss-archival/` — see that folder's `README.md` for the loader index, Tailscale ramps, and ASE/SCSS exports.
 
 ---
 
@@ -238,11 +238,11 @@ Glassmorphic modal with formats: APA, MLA, BibTeX, TECHNICAL_REF.
 
 ## CSS Custom Properties (Full Set)
 
-Source palette: `assets/swiss-archival/palette.scss`. Hex values below are pulled from the canonical six-color swatch plus the Tailscale ramps in `assets/swiss-archival/tailscale.txt`.
+Source palette: `assets/palettes/swiss-archival/palette.scss`. Hex values below are pulled from the canonical six-color swatch plus the Tailscale ramps in `assets/palettes/swiss-archival/tailscale.txt`.
 
 ```css
 :root {
-  /* Color — core swatch (assets/swiss-archival/) */
+  /* Color — core swatch (assets/palettes/swiss-archival/) */
   --color-bg: #EFE9DC;          /* soft-linen 100 */
   --color-surface: #EEE8DB;     /* soft-linen-2 */
   --color-fg: #2A2520;          /* carbon-black */
@@ -313,7 +313,7 @@ Source palette: `assets/swiss-archival/palette.scss`. Hex values below are pulle
 }
 ```
 
-**Tailscale loader.** For the full 50–950 ramp per color, import the JSON in `assets/swiss-archival/tailscale.txt` and expose it as a flat `--linen-500`, `--olive-600` style token set, or generate the SCSS partials from the file. Do not hand-roll lighten/darken — they break the warm-archival character.
+**Tailscale loader.** For the full 50–950 ramp per color, import the JSON in `assets/palettes/swiss-archival/tailscale.txt` and expose it as a flat `--linen-500`, `--olive-600` style token set, or generate the SCSS partials from the file. Do not hand-roll lighten/darken — they break the warm-archival character.
 
 ---
 

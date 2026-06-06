@@ -15,7 +15,8 @@ Use this skill when the user needs interface direction, design-system selection,
 - Avoid generic AI aesthetics: no default purple/indigo gradients, no glossy filler, no emoji in functional UI.
 - Use Font Awesome 6 when the project needs a general icon set.
 - For **Swiss-Archival** specimen decorators, follow the **geometry ruleset** in `assets/decorators/swiss-archival-specimen-decorator.md` (seed, superformula paths, layers, orbits, captions); implement however you like, but preserve that logic for the decorator SVG.
-- For **Swiss-Archival** color tokens, source hex values from `assets/swiss-archival/` (Coolors palette + Tailscale 50–950 ramps). Do not invent ad-hoc lighten/darken — pick a Tailscale stop. The `assets/swiss-archival/README.md` is the loader index (SCSS / CSS vars / ASE / Tailscale JSON).
+- For **Swiss-Archival** color tokens, source hex values from `assets/palettes/swiss-archival/` (Coolors palette + Tailscale 50–950 ramps). Do not invent ad-hoc lighten/darken — pick a Tailscale stop. The `assets/palettes/swiss-archival/README.md` is the loader index (SCSS / CSS vars / ASE / Tailscale JSON).
+- For **M3 Pastel** candidate swatches, source hex values from `assets/palettes/m3-pastel/<n>/` (Coolors palette 1–4). Pick one candidate that matches the project's mood (studio mix, warm blush, soft studio, soft cream) and wire its tokens into the M3 Pastel Glass system. The `assets/palettes/m3-pastel/README.md` is the loader index.
 - For **palette sourcing** (a fresh swatch for a new project, refreshing the colors of a chosen system, or exploring alternatives before locking in), invoke the **`color-palette-hunter`** skill (Color Hunt scraper; `--trending|--popular|--theme|--query`, output `json|css|tailwind|html`). Optional: skip the step cleanly if the skill is not installed. Use it to propose 2–3 candidate palettes, then drop the winner into `assets/palettes.json` and into the chosen system's `references/` doc.
 
 ## Decision Flow
@@ -103,5 +104,6 @@ python3 scripts/apply_ui_rules.py --style [fluent|ant|carbon|atlassian|apple-hig
 - Main map: [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
 - System details: `references/ant-design.md`, `references/carbon-design.md`, `references/fluent-design.md`, `references/atlassian-design.md`, `references/apple-hig.md`, `references/material-you.md`, `references/shopify-polaris.md`, `references/minimalism.md`, `references/swiss-design.md`, `references/swiss-archival.md`, `references/neo-brutalism.md`, `references/glassmorphism.md`, `references/claymorphism.md`, `references/skeuomorphism.md`, `references/neo-m3-hybrid.md`, `references/m3-pastel-glass.md`
 - Page archetypes: `assets/archetypes/dashboard.md`, `assets/archetypes/settings.md`, `assets/archetypes/table-detail.md`, `assets/archetypes/marketing-hero.md`, `assets/archetypes/editorial-landing.md`
-- Swiss-Archival palette source files: `assets/swiss-archival/` — see `assets/swiss-archival/README.md` for the loader index (PNG, SVG, ASE, SCSS, TXT, Tailscale JSON).
+- Swiss-Archival palette source files: `assets/palettes/swiss-archival/` — see `assets/palettes/swiss-archival/README.md` for the loader index (PNG, SVG, ASE, SCSS, TXT, Tailscale JSON).
+- M3 Pastel palette source files: `assets/palettes/m3-pastel/` (4 candidate swatches in `1/`, `2/`, `3/`, `4/`) — see `assets/palettes/m3-pastel/README.md` for the loader index.
 - Swiss-Archival decorators: `assets/decorators/swiss-archival-specimen-decorator.md`
