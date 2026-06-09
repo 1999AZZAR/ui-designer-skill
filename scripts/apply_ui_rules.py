@@ -1,140 +1,35 @@
 #!/usr/bin/env python3
 """
-UI Design Rules Generator
+UI Design Rules Generator (Agent-Oriented)
 
 Generates structured AI design rules for .cursorrules or other config files.
 Supports single systems, hybrid patterns, and cross-cutting rules.
 
-Usage:
+Exit codes:
+    0 - Success
+    1 - Invalid arguments or missing required options
+    2 - Style/palette/archetype not found
+
+Agent usage:
     python3 apply_ui_rules.py --style ant --palette dark
     python3 apply_ui_rules.py --style polaris --hybrid swiss --palette mono
-    python3 apply_ui_rules.py --list
+    python3 apply_ui_rules.py --list --json
+    python3 apply_ui_rules.py --validate --style ant --palette dark
     python3 apply_ui_rules.py --dry-run --style material --archetype dashboard
 """
 
 import argparse
+import json
 import os
 import sys
 from typing import Optional
 
 # ─── Style Definitions ─────────────────────────────────────────────────────────
 
-STYLE_CHOICES = [
-    "fluent",
-    "ant",
-    "carbon",
-    "atlassian",
-    "apple-hig",
-    "polaris",
-    "material",
-    "minimal",
-    "glass",
-    "neumorphism",
-    "neo-brutalism",
-    "claymorphism",
-    "skeuomorphism",
-    "swiss",
-    "swiss-archival",
-    "m3-pastel",
-    "neo-m3",
-]
-
-PALETTE_CHOICES = ["pastel", "dark", "vibrant", "mono"]
-
-ARCHETYPE_CHOICES = [
-    "dashboard",
-    "settings",
-    "table-detail",
-    "marketing-hero",
-    "editorial-landing",
-]
-
-HYBRID_SECONDARY = [
-    "swiss",
-    "swiss-archival",
-    "glass",
-    "neo-m3",
-    "m3-pastel",
-    "minimal",
-]
-
-# ─── Base Rules ────────────────────────────────────────────────────────────────
-
-BASE_RULES = """# AI Design Rules
-
-## Core Philosophy
-- Choose the design system from product context first, not visual taste first.
-- Prefer one primary design language unless a hybrid has explicit ownership boundaries.
-- Avoid generic AI aesthetics: no default purple gradients, no glossy filler, no emoji in functional UI.
-- Keep interfaces production-ready, accessible, and structurally coherent.
-"""
-
-# ─── Cross-Cutting Rules ──────────────────────────────────────────────────────
-
-ICON_RULES = [
-    "NEVER use icons from unapproved sources.",
-    "Only these 6 icon libraries are allowed: Phosphor, Font Awesome, Google Material Symbols, Tabler, Lucide, Heroicons.",
-    "Use icons from the approved set only — reject all others.",
-    "Match icon style (outline/filled/duotone) to the chosen design system.",
-]
-
-ACCESSIBILITY_RULES = [
-    "All text must meet WCAG AA contrast (4.5:1 normal, 3:1 large).",
-    "Every interactive element must have visible focus indicators.",
-    "All form inputs must have visible labels (not placeholder-only).",
-    "Use semantic HTML: landmarks (header, nav, main, footer), headings in order, lists for repeated items.",
-    "Never use color alone to convey information — add icon, text, or pattern.",
-    "Icon-only buttons must have aria-label.",
-    "Respect prefers-reduced-motion for all animations.",
-    "Minimum touch target: 44x44px.",
-]
-
-MOTION_RULES = [
-    "Use motion as feedback, not decoration.",
-    "Standard transitions: 150-250ms with ease-out for entering, ease-in for exiting.",
-    "No animation longer than 500ms without a progress indicator.",
-    "No flashing content (max 3 flashes per second).",
-    "Always respect prefers-reduced-motion.",
-]
-
-RESPONSIVE_RULES = [
-    "Design mobile-first, enhance for larger screens.",
-    "Use 12-column grid with consistent gutters.",
-    "Stack elements vertically on mobile, use columns on tablet+.",
-    "Tables become card layouts on mobile.",
-    "Navigation: bottom tabs (mobile) → sidebar (desktop).",
-]
-
-TOKEN_RULES = [
-    "Use consistent spacing scale based on 4px increments.",
-    "Typography: max 4-5 size steps per system.",
-    "Border radius: pick 2-3 values max (sm, md, lg) and reuse.",
-    "Shadows: use sparingly, prefer surface elevation via color shift.",
-    "Z-index: use a scale, not ad-hoc values.",
-]
-
-TAILWIND_RULES = [
-    "When using Tailwind CSS, follow utility-first patterns.",
-    "Use @apply sparingly — prefer utilities in markup.",
-    "Dark mode: use class-based dark: prefix.",
-    "Custom colors go in tailwind.config.js extend section.",
-    "Responsive: mobile-first with sm:, md:, lg:, xl: prefixes.",
-]
-
-CROSS_CUTTING_SECTIONS = {
-    "icons": {"label": "Icon Standards", "rules": ICON_RULES},
-    "accessibility": {"label": "Accessibility (WCAG AA)", "rules": ACCESSIBILITY_RULES},
-    "motion": {"label": "Motion & Animation", "rules": MOTION_RULES},
-    "responsive": {"label": "Responsive Layout", "rules": RESPONSIVE_RULES},
-    "tokens": {"label": "Design Tokens", "rules": TOKEN_RULES},
-}
-
-# ─── Style Rules ───────────────────────────────────────────────────────────────
-
-STYLE_RULES = {
+STYLES = {
     "fluent": {
         "label": "Fluent Design",
-        "use_for": "Windows-like software, Microsoft-adjacent enterprise products, layered productivity UI",
+        "use_for": "Windows-like software, Microsoft-adjacent enterprise products",
         "rules": [
             "Use light, depth, motion, material, and scale as the main interaction vocabulary.",
             "Prefer Segoe UI or system-like Microsoft typography.",
@@ -147,8 +42,8 @@ STYLE_RULES = {
         "use_for": "Admin panels, dashboards, CMS, internal tools, workflow-heavy products",
         "rules": [
             "Apply Natural, Certain, Meaningful, and Growing as operating checks.",
-            "Use familiar enterprise patterns: forms, tables, tags, drawers, modals, inline validation, empty/loading/error states.",
-            "Prefer page scaffolding with header, actions or filters row, main content region, and secondary detail region.",
+            "Use familiar enterprise patterns: forms, tables, tags, drawers, modals, inline validation.",
+            "Prefer page scaffolding with header, actions row, main content, and secondary detail region.",
             "Keep motion functional feedback, not decoration.",
         ],
     },
@@ -274,7 +169,7 @@ STYLE_RULES = {
     },
     "swiss-archival": {
         "label": "Swiss-Archival Design",
-        "use_for": "Digital archives, museum sites, academic platforms, research tools, heritage brands",
+        "use_for": "Digital archives, museum sites, academic platforms, heritage brands",
         "rules": [
             "Follow the geometry ruleset: seed, superformula paths, layers, orbits, captions.",
             "Use the dual-font system: display + body with strict hierarchy.",
@@ -305,78 +200,7 @@ STYLE_RULES = {
     },
 }
 
-# ─── Hybrid Patterns ───────────────────────────────────────────────────────────
-
-HYBRID_PATTERNS = {
-    "polaris+swiss": {
-        "label": "Polaris + Swiss",
-        "use_for": "Commerce platforms wanting editorial polish, luxury e-commerce, design-forward merchant tools",
-        "structure_owner": "polaris",
-        "brand_owner": "swiss",
-        "rules": [
-            "Polaris owns: commerce workflows, forms, tables, filters, product management.",
-            "Swiss owns: typography system, editorial layout, grid rigor, brand expression.",
-            "Use Swiss typography for product storytelling, Polaris components for operations.",
-            "Keep grid strict (Swiss) but apply Polaris spacing for interactive density.",
-        ],
-    },
-    "polaris+swiss-archival": {
-        "label": "Polaris + Swiss-Archival",
-        "use_for": "Heritage brands, artisan marketplaces, curated commerce with provenance focus",
-        "structure_owner": "polaris",
-        "brand_owner": "swiss-archival",
-        "rules": [
-            "Polaris owns: commerce operations, order flows, inventory management.",
-            "Swiss-Archival owns: brand surface, product storytelling, visual hierarchy, archival catalogs.",
-            "Use Swiss-Archival noise texture and dual-font on product pages.",
-            "Use Polaris resource lists and tables for admin/merchant views.",
-        ],
-    },
-    "ant+neo-m3": {
-        "label": "Ant + Neo-M3",
-        "use_for": "Enterprise products needing bold brand expression on marketing surfaces",
-        "structure_owner": "ant",
-        "brand_owner": "neo-m3",
-        "rules": [
-            "Ant owns: tables, forms, filters, drawers, notifications.",
-            "Neo-M3 owns: hero sections, high-level brand surfaces, special callouts.",
-        ],
-    },
-    "ant+glass": {
-        "label": "Ant + Glass",
-        "use_for": "Enterprise products with atmospheric landing/dashboard highlights",
-        "structure_owner": "ant",
-        "brand_owner": "glass",
-        "rules": [
-            "Ant owns: product workflows.",
-            "Glass owns: landing, dashboard highlight cards, atmospheric shells.",
-        ],
-    },
-    "carbon+minimal": {
-        "label": "Carbon + Minimal",
-        "use_for": "Dense analytical tools with clean outer layout",
-        "structure_owner": "carbon",
-        "brand_owner": "minimal",
-        "rules": [
-            "Carbon owns: dense operational components.",
-            "Minimal softens: outer layout and marketing surfaces.",
-        ],
-    },
-    "material+m3-pastel": {
-        "label": "Material + M3-Pastel",
-        "use_for": "Modern apps needing softer visual tone",
-        "structure_owner": "material",
-        "brand_owner": "m3-pastel",
-        "rules": [
-            "Material owns: structure and behavior.",
-            "M3-Pastel softens: color and surface language.",
-        ],
-    },
-}
-
-# ─── Palette Rules ─────────────────────────────────────────────────────────────
-
-PALETTE_RULES = {
+PALETTES = {
     "pastel": [
         "Use soft, low-saturation, high-value colors.",
         "Prefer light neutral canvases and toned accents.",
@@ -399,9 +223,7 @@ PALETTE_RULES = {
     ],
 }
 
-# ─── Archetype Rules ───────────────────────────────────────────────────────────
-
-ARCHETYPE_RULES = {
+ARCHETYPES = {
     "dashboard": {
         "label": "Dashboard",
         "rules": [
@@ -444,154 +266,244 @@ ARCHETYPE_RULES = {
     },
 }
 
+# ─── Hybrid Patterns ───────────────────────────────────────────────────────────
 
-# ─── Helper Functions ──────────────────────────────────────────────────────────
+HYBRIDS = {
+    "polaris+swiss": {
+        "label": "Polaris + Swiss",
+        "use_for": "Commerce platforms wanting editorial polish, luxury e-commerce",
+        "structure": "polaris",
+        "brand": "swiss",
+        "rules": [
+            "Polaris owns: commerce workflows, forms, tables, filters, product management.",
+            "Swiss owns: typography system, editorial layout, grid rigor, brand expression.",
+            "Use Swiss typography for product storytelling, Polaris components for operations.",
+            "Keep grid strict (Swiss) but apply Polaris spacing for interactive density.",
+        ],
+    },
+    "polaris+swiss-archival": {
+        "label": "Polaris + Swiss-Archival",
+        "use_for": "Heritage brands, artisan marketplaces, curated commerce with provenance",
+        "structure": "polaris",
+        "brand": "swiss-archival",
+        "rules": [
+            "Polaris owns: commerce operations, order flows, inventory management.",
+            "Swiss-Archival owns: brand surface, product storytelling, archival catalogs.",
+            "Use Swiss-Archival noise texture and dual-font on product pages.",
+            "Use Polaris resource lists and tables for admin/merchant views.",
+        ],
+    },
+    "ant+neo-m3": {
+        "label": "Ant + Neo-M3",
+        "use_for": "Enterprise products needing bold brand on marketing surfaces",
+        "structure": "ant",
+        "brand": "neo-m3",
+        "rules": [
+            "Ant owns: tables, forms, filters, drawers, notifications.",
+            "Neo-M3 owns: hero sections, high-level brand surfaces, special callouts.",
+        ],
+    },
+    "ant+glass": {
+        "label": "Ant + Glass",
+        "use_for": "Enterprise products with atmospheric landing/dashboard highlights",
+        "structure": "ant",
+        "brand": "glass",
+        "rules": [
+            "Ant owns: product workflows.",
+            "Glass owns: landing, dashboard highlight cards, atmospheric shells.",
+        ],
+    },
+    "carbon+minimal": {
+        "label": "Carbon + Minimal",
+        "use_for": "Dense analytical tools with clean outer layout",
+        "structure": "carbon",
+        "brand": "minimal",
+        "rules": [
+            "Carbon owns: dense operational components.",
+            "Minimal softens: outer layout and marketing surfaces.",
+        ],
+    },
+    "material+m3-pastel": {
+        "label": "Material + M3-Pastel",
+        "use_for": "Modern apps needing softer visual tone",
+        "structure": "material",
+        "brand": "m3-pastel",
+        "rules": [
+            "Material owns: structure and behavior.",
+            "M3-Pastel softens: color and surface language.",
+        ],
+    },
+}
+
+# ─── Cross-Cutting Rules ──────────────────────────────────────────────────────
+
+CROSS_CUTTING = {
+    "icons": {
+        "label": "Icon Standards",
+        "rules": [
+            "NEVER use icons from unapproved sources.",
+            "Only these 6 icon libraries are allowed: Phosphor, Font Awesome, Google Material Symbols, Tabler, Lucide, Heroicons.",
+            "Use icons from the approved set only — reject all others.",
+            "Match icon style (outline/filled/duotone) to the chosen design system.",
+        ],
+    },
+    "accessibility": {
+        "label": "Accessibility (WCAG AA)",
+        "rules": [
+            "All text must meet WCAG AA contrast (4.5:1 normal, 3:1 large).",
+            "Every interactive element must have visible focus indicators.",
+            "All form inputs must have visible labels (not placeholder-only).",
+            "Use semantic HTML: landmarks, headings in order, lists for repeated items.",
+            "Never use color alone to convey information — add icon, text, or pattern.",
+            "Icon-only buttons must have aria-label.",
+            "Respect prefers-reduced-motion for all animations.",
+            "Minimum touch target: 44x44px.",
+        ],
+    },
+    "motion": {
+        "label": "Motion & Animation",
+        "rules": [
+            "Use motion as feedback, not decoration.",
+            "Standard transitions: 150-250ms with ease-out for entering, ease-in for exiting.",
+            "No animation longer than 500ms without a progress indicator.",
+            "No flashing content (max 3 flashes per second).",
+            "Always respect prefers-reduced-motion.",
+        ],
+    },
+    "tokens": {
+        "label": "Design Tokens",
+        "rules": [
+            "Use consistent spacing scale based on 4px increments.",
+            "Typography: max 4-5 size steps per system.",
+            "Border radius: pick 2-3 values max (sm, md, lg) and reuse.",
+            "Shadows: use sparingly, prefer surface elevation via color shift.",
+            "Z-index: use a scale, not ad-hoc values.",
+        ],
+    },
+    "responsive": {
+        "label": "Responsive Layout",
+        "rules": [
+            "Design mobile-first, enhance for larger screens.",
+            "Use 12-column grid with consistent gutters.",
+            "Stack elements vertically on mobile, use columns on tablet+.",
+            "Tables become card layouts on mobile.",
+            "Navigation: bottom tabs (mobile) → sidebar (desktop).",
+        ],
+    },
+    "tailwind": {
+        "label": "Tailwind CSS",
+        "rules": [
+            "When using Tailwind CSS, follow utility-first patterns.",
+            "Use @apply sparingly — prefer utilities in markup.",
+            "Dark mode: use class-based dark: prefix.",
+            "Custom colors go in tailwind.config.js extend section.",
+            "Responsive: mobile-first with sm:, md:, lg:, xl: prefixes.",
+        ],
+    },
+}
+
+# ─── Base Rules ────────────────────────────────────────────────────────────────
+
+BASE_RULES = """# AI Design Rules
+
+## Core Philosophy
+- Choose the design system from product context first, not visual taste first.
+- Prefer one primary design language unless a hybrid has explicit ownership boundaries.
+- Avoid generic AI aesthetics: no default purple gradients, no glossy filler, no emoji in functional UI.
+- Keep interfaces production-ready, accessible, and structurally coherent.
+"""
+
+
+# ─── Builder Functions ─────────────────────────────────────────────────────────
 
 
 def format_section(title: str, items: list[str]) -> str:
-    """Format a markdown section with title and bullet items."""
     lines = [f"## {title}"]
     lines.extend(f"- {item}" for item in items)
     return "\n".join(lines)
 
 
-def build_cross_cutting(include: list[str]) -> str:
-    """Build cross-cutting rules sections."""
-    sections = []
-    for key in include:
-        if key in CROSS_CUTTING_SECTIONS:
-            section = CROSS_CUTTING_SECTIONS[key]
-            sections.append(format_section(section["label"], section["rules"]))
-    return "\n\n".join(sections)
-
-
-def build_hybrid_rules(
-    primary: str, secondary: str, palette: str, archetype: Optional[str]
+def build_hybrid(
+    primary: str, secondary: str, palette: str, archetype: Optional[str] = None
 ) -> str:
-    """Build rules for a hybrid system."""
-    hybrid_key = f"{primary}+{secondary}"
-    if hybrid_key not in HYBRID_PATTERNS:
-        print(f"Warning: No hybrid pattern for {hybrid_key}, using primary only.", file=sys.stderr)
-        return build_single_rules(primary, palette, archetype)
+    key = f"{primary}+{secondary}"
+    if key not in HYBRIDS:
+        print(f"Error: No hybrid pattern for '{key}'", file=sys.stderr)
+        print(f"Available hybrids: {', '.join(HYBRIDS.keys())}", file=sys.stderr)
+        sys.exit(2)
 
-    hybrid = HYBRID_PATTERNS[hybrid_key]
-    primary_data = STYLE_RULES[primary]
-    secondary_data = STYLE_RULES[secondary]
-
+    hybrid = HYBRIDS[key]
     sections = [BASE_RULES.rstrip()]
 
-    # Hybrid overview
-    sections.append(
-        format_section(
-            f"Hybrid System: {hybrid['label']}",
-            [f"Use for: {hybrid['use_for']}"]
-            + hybrid["rules"],
-        )
-    )
+    sections.append(format_section(f"Hybrid: {hybrid['label']}", [f"Use for: {hybrid['use_for']}"] + hybrid["rules"]))
+    sections.append(format_section(f"Structure Owner: {STYLES[primary]['label']}", [f"Use for: {STYLES[primary]['use_for']}"] + STYLES[primary]["rules"]))
+    sections.append(format_section(f"Brand Owner: {STYLES[secondary]['label']}", STYLES[secondary]["rules"]))
+    sections.append(format_section(f"Palette: {palette.upper()}", PALETTES[palette]))
 
-    # Primary system
-    sections.append(
-        format_section(
-            f"Structure Owner: {primary_data['label']}",
-            [f"Use for: {primary_data['use_for']}"] + primary_data["rules"],
-        )
-    )
-
-    # Secondary system
-    sections.append(
-        format_section(
-            f"Brand Owner: {secondary_data['label']}",
-            secondary_data["rules"],
-        )
-    )
-
-    # Palette
-    sections.append(
-        format_section(f"Palette Direction: {palette.upper()}", PALETTE_RULES[palette])
-    )
-
-    # Archetype
     if archetype:
-        archetype_data = ARCHETYPE_RULES[archetype]
-        sections.append(
-            format_section(
-                f"Page Archetype: {archetype_data['label']}", archetype_data["rules"]
-            )
-        )
+        sections.append(format_section(f"Archetype: {ARCHETYPES[archetype]['label']}", ARCHETYPES[archetype]["rules"]))
 
-    # Cross-cutting
-    sections.append(build_cross_cutting(["icons", "accessibility", "motion"]))
+    sections.append(format_section(CROSS_CUTTING["icons"]["label"], CROSS_CUTTING["icons"]["rules"]))
+    sections.append(format_section(CROSS_CUTTING["accessibility"]["label"], CROSS_CUTTING["accessibility"]["rules"]))
+    sections.append(format_section(CROSS_CUTTING["motion"]["label"], CROSS_CUTTING["motion"]["rules"]))
 
     return "\n\n".join(sections) + "\n"
 
 
-def build_single_rules(
-    style: str, palette: str, archetype: Optional[str], include_tailwind: bool = False
+def build_single(
+    style: str, palette: str, archetype: Optional[str] = None, tailwind: bool = False
 ) -> str:
-    """Build rules for a single system."""
-    style_data = STYLE_RULES[style]
+    if style not in STYLES:
+        print(f"Error: Style '{style}' not found", file=sys.stderr)
+        print(f"Available styles: {', '.join(STYLES.keys())}", file=sys.stderr)
+        sys.exit(2)
+
     sections = [BASE_RULES.rstrip()]
+    s = STYLES[style]
 
-    sections.append(
-        format_section(
-            f"Selected System: {style_data['label']}",
-            [f"Use for: {style_data['use_for']}"] + style_data["rules"],
-        )
-    )
-
-    sections.append(
-        format_section(f"Palette Direction: {palette.upper()}", PALETTE_RULES[palette])
-    )
+    sections.append(format_section(f"Selected System: {s['label']}", [f"Use for: {s['use_for']}"] + s["rules"]))
+    sections.append(format_section(f"Palette: {palette.upper()}", PALETTES[palette]))
 
     if archetype:
-        archetype_data = ARCHETYPE_RULES[archetype]
-        sections.append(
-            format_section(
-                f"Page Archetype: {archetype_data['label']}", archetype_data["rules"]
-            )
-        )
+        sections.append(format_section(f"Archetype: {ARCHETYPES[archetype]['label']}", ARCHETYPES[archetype]["rules"]))
 
-    # Cross-cutting
-    cross_cutting_keys = ["icons", "accessibility", "motion", "tokens"]
-    if include_tailwind:
-        cross_cutting_keys.append("responsive")
-    sections.append(build_cross_cutting(cross_cutting_keys))
+    for key in ["icons", "accessibility", "motion", "tokens"]:
+        sections.append(format_section(CROSS_CUTTING[key]["label"], CROSS_CUTTING[key]["rules"]))
 
-    if include_tailwind:
-        sections.append(format_section("Tailwind CSS", TAILWIND_RULES))
+    if tailwind:
+        sections.append(format_section(CROSS_CUTTING["responsive"]["label"], CROSS_CUTTING["responsive"]["rules"]))
+        sections.append(format_section(CROSS_CUTTING["tailwind"]["label"], CROSS_CUTTING["tailwind"]["rules"]))
 
     return "\n\n".join(sections) + "\n"
 
 
-def list_options():
-    """Print all available options."""
-    print("\n=== Available Styles ===\n")
-    for s in STYLE_CHOICES:
-        data = STYLE_RULES[s]
-        print(f"  {s:20s}  {data['label']} — {data['use_for'][:60]}")
+# ─── Output Functions ──────────────────────────────────────────────────────────
 
-    print("\n=== Available Palettes ===\n")
-    for p in PALETTE_CHOICES:
-        print(f"  {p}")
 
-    print("\n=== Available Archetypes ===\n")
-    for a in ARCHETYPE_CHOICES:
-        data = ARCHETYPE_RULES[a]
-        print(f"  {a:20s}  {data['label']}")
-
-    print("\n=== Hybrid Patterns ===\n")
-    for key, data in HYBRID_PATTERNS.items():
-        print(f"  {key:30s}  {data['label']}")
-        print(f"  {'':30s}  {data['use_for'][:70]}")
-
-    print()
+def output_json(style=None, palette=None, archetype=None, hybrid=None, content=None):
+    """Structured JSON output for agent consumption."""
+    result = {
+        "styles": list(STYLES.keys()),
+        "palettes": list(PALETTES.keys()),
+        "archetypes": list(ARCHETYPES.keys()),
+        "hybrids": list(HYBRIDS.keys()),
+        "cross_cutting": list(CROSS_CUTTING.keys()),
+    }
+    if hybrid:
+        result["selected_hybrid"] = hybrid
+        result["selected_style"] = None
+    else:
+        result["selected_style"] = style
+    result["selected_palette"] = palette
+    result["selected_archetype"] = archetype
+    if content:
+        result["rules"] = content
+    print(json.dumps(result, indent=2))
 
 
 def write_output(content: str, output_file: str, clean: bool = False):
-    """Write rules to output file."""
     if clean and os.path.exists(output_file):
         os.remove(output_file)
-
     mode = "a" if os.path.exists(output_file) else "w"
     with open(output_file, mode, encoding="utf-8") as f:
         if mode == "a":
@@ -604,100 +516,63 @@ def write_output(content: str, output_file: str, clean: bool = False):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate structured UI design rules for AI coding assistants.",
+        description="Generate UI design rules for AI coding agents.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  %(prog)s --style ant --palette dark
-  %(prog)s --style polaris --hybrid swiss --palette mono
-  %(prog)s --style material --archetype dashboard --tailwind
-  %(prog)s --list
-  %(prog)s --dry-run --style carbon --palette dark
-        """,
     )
-
-    parser.add_argument(
-        "--style",
-        choices=STYLE_CHOICES,
-        default=None,
-        help="Primary design system.",
-    )
-    parser.add_argument(
-        "--palette",
-        choices=PALETTE_CHOICES,
-        default="pastel",
-        help="Palette direction (default: pastel).",
-    )
-    parser.add_argument(
-        "--archetype",
-        choices=ARCHETYPE_CHOICES,
-        default=None,
-        help="Optional page archetype.",
-    )
-    parser.add_argument(
-        "--hybrid",
-        choices=HYBRID_SECONDARY,
-        default=None,
-        help="Secondary system for hybrid pattern (use with --style).",
-    )
-    parser.add_argument(
-        "--tailwind",
-        action="store_true",
-        help="Include Tailwind CSS integration rules.",
-    )
-    parser.add_argument(
-        "--output",
-        "-o",
-        default=".cursorrules",
-        help="Output file path (default: .cursorrules).",
-    )
-    parser.add_argument(
-        "--clean",
-        action="store_true",
-        help="Remove existing file before writing (no append).",
-    )
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Print rules to stdout without writing to file.",
-    )
-    parser.add_argument(
-        "--list",
-        action="store_true",
-        help="List all available styles, palettes, archetypes, and hybrids.",
-    )
+    parser.add_argument("--style", choices=list(STYLES.keys()), help="Primary design system.")
+    parser.add_argument("--palette", choices=list(PALETTES.keys()), default="pastel", help="Palette direction.")
+    parser.add_argument("--archetype", choices=list(ARCHETYPES.keys()), help="Page archetype.")
+    parser.add_argument("--hybrid", help="Secondary system for hybrid (e.g., 'swiss', 'glass').")
+    parser.add_argument("--tailwind", action="store_true", help="Include Tailwind CSS rules.")
+    parser.add_argument("--output", "-o", default=".cursorrules", help="Output file.")
+    parser.add_argument("--clean", action="store_true", help="Overwrite instead of append.")
+    parser.add_argument("--dry-run", action="store_true", help="Print to stdout, no file write.")
+    parser.add_argument("--json", action="store_true", help="JSON output (for agents).")
+    parser.add_argument("--list", action="store_true", help="List available options.")
+    parser.add_argument("--validate", action="store_true", help="Validate style/palette combo, exit code only.")
 
     args = parser.parse_args()
 
     if args.list:
-        list_options()
+        if args.json:
+            output_json()
+        else:
+            print("styles:", ", ".join(STYLES.keys()))
+            print("palettes:", ", ".join(PALETTES.keys()))
+            print("archetypes:", ", ".join(ARCHETYPES.keys()))
+            print("hybrids:", ", ".join(HYBRIDS.keys()))
         return
 
     if not args.style:
-        parser.error("--style is required (or use --list to see options)")
+        parser.error("--style required (use --list to see options)")
 
-    if args.hybrid and args.hybrid in STYLE_RULES.get(args.style, {}).get("rules", []):
-        pass  # Valid hybrid
+    # Validate
+    if args.validate:
+        valid = args.style in STYLES and args.palette in PALETTES
+        if args.hybrid:
+            valid = valid and f"{args.style}+{args.hybrid}" in HYBRIDS
+        sys.exit(0 if valid else 2)
 
-    # Build rules
+    # Build
     if args.hybrid:
-        content = build_hybrid_rules(args.style, args.hybrid, args.palette, args.archetype)
+        content = build_hybrid(args.style, args.hybrid, args.palette, args.archetype)
     else:
-        content = build_single_rules(
-            args.style, args.palette, args.archetype, args.tailwind
-        )
+        content = build_single(args.style, args.palette, args.archetype, args.tailwind)
 
     # Output
-    if args.dry_run:
+    if args.json:
+        output_json(
+            style=args.style,
+            palette=args.palette,
+            archetype=args.archetype,
+            hybrid=f"{args.style}+{args.hybrid}" if args.hybrid else None,
+            content=content if args.dry_run else None,
+        )
+    elif args.dry_run:
         print(content)
     else:
         write_output(content, args.output, args.clean)
-        hybrid_suffix = f" + {args.hybrid}" if args.hybrid else ""
-        archetype_suffix = f" / archetype:{args.archetype}" if args.archetype else ""
-        tailwind_suffix = " / tailwind" if args.tailwind else ""
-        print(
-            f"✓ Applied: {args.style}{hybrid_suffix} + {args.palette}{archetype_suffix}{tailwind_suffix} → {args.output}"
-        )
+        print(f"ok: {args.style}{'+' + args.hybrid if args.hybrid else ''} / {args.palette} -> {args.output}")
 
 
 if __name__ == "__main__":
