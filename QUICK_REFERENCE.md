@@ -78,6 +78,16 @@ Use these only when the split is explicit:
   - `material` owns structure and behavior
   - `m3-pastel` softens color and surface language
 
+- `polaris` + `swiss`
+  - `polaris` owns commerce workflows, forms, tables, merchant operations
+  - `swiss` owns typography system, editorial layout, grid rigor, brand expression
+  - Best for: Commerce platforms that want editorial polish (luxury e-commerce, design-forward merchant tools)
+
+- `polaris` + `swiss-archival`
+  - `polaris` owns commerce operations, product management, order flows
+  - `swiss-archival` owns brand surface, product storytelling, visual hierarchy, archival product catalogs
+  - Best for: Heritage brands, artisan marketplaces, curated commerce with provenance/origin focus
+
 ## Page Archetype Routing
 
 After choosing a system, route to the closest page archetype:
