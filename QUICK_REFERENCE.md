@@ -88,13 +88,29 @@ After choosing a system, route to the closest page archetype:
 - Landing page, campaign, splash, launch: `assets/archetypes/marketing-hero.md`
 - Story-led, content-led, typography-first page: `assets/archetypes/editorial-landing.md`
 
+## Cross-Cutting References
+
+Apply these to ALL design system choices:
+
+| Topic | Reference | When to Check |
+|-------|-----------|---------------|
+| Icons | `references/icon-guide.md` | Always (6 approved sources only) |
+| Components | `references/component-patterns.md` | When building forms, tables, nav, modals |
+| Tokens | `references/design-tokens.md` | When defining colors, spacing, type |
+| Responsive | `references/responsive-layout.md` | When structuring layouts, breakpoints |
+| Accessibility | `references/accessibility.md` | Before finalizing any design |
+| Motion | `references/motion-design.md` | When adding animations, transitions |
+| Tailwind | `references/tailwind-integration.md` | When using Tailwind CSS |
+
 ## Anti-Misuse Checks
 
-- **NEVER use icons from unapproved sources.** Only use icons from: Phosphor, Font Awesome, Google Material Symbols, Tabler, Lucide, or Heroicons. See `SKILL.md` for full details.
+- **NEVER use icons from unapproved sources.** Only use icons from: Phosphor, Font Awesome, Google Material Symbols, Tabler, Lucide, or Heroicons. See `references/icon-guide.md`.
 - Do not use `glass`, `claymorphism`, `neumorphism`, or `skeuomorphism` as the sole system for dense back-office workflows.
 - Do not use `ant` or `carbon` alone when the product clearly depends on strong brand expression unless that restraint is intentional.
 - Do not create hybrids with no ownership split.
 - Do not pick a system only because it is trendy.
+- Do not skip accessibility checks.
+- Do not ignore `prefers-reduced-motion`.
 
 ## Apply Command
 
