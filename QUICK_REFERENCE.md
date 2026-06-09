@@ -90,6 +90,7 @@ After choosing a system, route to the closest page archetype:
 
 ## Anti-Misuse Checks
 
+- **NEVER use icons from unapproved sources.** Only use icons from: Phosphor, Font Awesome, Google Material Symbols, Tabler, Lucide, or Heroicons. See `SKILL.md` for full details.
 - Do not use `glass`, `claymorphism`, `neumorphism`, or `skeuomorphism` as the sole system for dense back-office workflows.
 - Do not use `ant` or `carbon` alone when the product clearly depends on strong brand expression unless that restraint is intentional.
 - Do not create hybrids with no ownership split.
