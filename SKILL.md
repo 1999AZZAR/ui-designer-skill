@@ -1,6 +1,15 @@
 ---
 name: ui-designer
 description: Choose the best UI design system, or a deliberate combination of systems, for web or app interfaces. Use for dashboards, admin panels, internal tools, CMS, SaaS, websites, component theming, color systems, and frontend visual direction across Ant Design, Fluent, Carbon, Atlassian, Apple HIG, Material You, Polaris, Minimalism, Glassmorphism, Neo-Brutalism, Swiss, Swiss-Archival, and related systems.
+entry: SKILL.md
+resources:
+  guide: QUICK_REFERENCE.md
+  icons: references/icon-guide.md
+  tokens: references/design-tokens.md
+  systems: references/
+  archetypes: assets/archetypes/
+  palettes: assets/palettes.json
+  script: scripts/apply_ui_rules.py
 ---
 
 # UI Designer Skill
