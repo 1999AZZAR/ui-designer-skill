@@ -122,6 +122,57 @@ Apply these to ALL design system choices:
 - Do not skip accessibility checks.
 - Do not ignore `prefers-reduced-motion`.
 
+## Brand Reference (DESIGN.md)
+
+When the user wants to match a specific real-world brand's visual language, use **getdesign.md** instead of (or layered on top of) a system file.
+
+### Fetch a Brand
+
+```bash
+# downloads DESIGN.md to project root
+npx getdesign@latest add <brand>
+
+# then tell agent: "use DESIGN.md as design reference"
+```
+
+### Brand → System Mapping (quick routing)
+
+| Brand | Fetch Slug | Structural Backbone |
+|-------|------------|---------------------|
+| Vercel | `vercel` | `minimal` |
+| Linear | `linear.app` | `minimal` |
+| Stripe | `stripe` | `minimal` |
+| Notion | `notion` | `ant` / `atlassian` |
+| Figma | `figma` | `minimal` / `neo-m3` |
+| Supabase | `supabase` | `carbon` |
+| Raycast | `raycast` | `minimal` |
+| Framer | `framer` | `minimal` |
+| Claude | `claude` | custom editorial |
+| Discord | `discord` | `glassmorphism` + `material` |
+| Spotify | `spotify` | `glassmorphism` + `material` |
+| Slack | `slack` | `atlassian` |
+| Tesla | `tesla` | `swiss-archival` |
+| SpaceX | `spacex` | `swiss` |
+| Nike | `nike` | `swiss` |
+| Shopify | `shopify` | `polaris` |
+| Apple | `apple` | `apple-hig` |
+| IBM | `ibm` | `carbon` |
+| Coinbase | `coinbase` | `minimal` |
+| Stripe | `stripe` | `minimal` |
+| Warp | `warp` | `neo-brutalism` / `carbon` |
+| Cursor | `cursor` | `minimal` |
+
+Browse all 328 brands: `https://getdesign.md/design-md`
+
+### How DESIGN.md and System Files Interact
+
+**System file** provides: structural layout, density rules, grid, navigation patterns, component behavior
+**DESIGN.md** overrides: all color tokens, typography scale, border-radius, spacing, component visual specs
+
+When both are available, DESIGN.md tokens win on visual properties; the system file wins on structural decisions.
+
+Full reference: `references/getdesign-md.md`
+
 ## Apply Command
 
 ```bash

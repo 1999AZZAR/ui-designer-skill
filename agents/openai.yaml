@@ -2,3 +2,10 @@ interface:
   display_name: "UI Designer"
   short_description: "Expert UI design system selection and implementation."
   default_prompt: "Design a modern dashboard using Material You."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "ui-designer"
+      description: "Design system generator, palette fetcher, brand reference (328+ brands via getdesign.md)"
+      transport: "stdio"

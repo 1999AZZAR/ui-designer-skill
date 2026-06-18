@@ -1,11 +1,33 @@
 ---
 name: ui-designer
-description: Choose the best UI design system, or a deliberate combination of systems, for web or app interfaces. Use for dashboards, admin panels, internal tools, CMS, SaaS, websites, component theming, color systems, and frontend visual direction across Ant Design, Fluent, Carbon, Atlassian, Apple HIG, Material You, Polaris, Minimalism, Glassmorphism, Neo-Brutalism, Swiss, Swiss-Archival, and related systems.
+description: Choose the best UI design system, or a deliberate combination of systems, for web or app interfaces. Use for dashboards, admin panels, internal tools, CMS, SaaS, websites, component theming, color systems, and frontend visual direction across Ant Design, Fluent, Carbon, Atlassian, Apple HIG, Material You, Polaris, Minimalism, Glassmorphism, Neo-Brutalism, Swiss, Swiss-Archival, and related systems. Also supports brand-cloning via getdesign.md DESIGN.md files (328+ real-world brands: Stripe, Vercel, Linear, Notion, Tesla, Spotify, etc.).
 ---
 
 # UI Designer Skill
 
 Use this skill when the user needs interface direction, design-system selection, theming, or visual/product UX structure before or during implementation.
+
+## MCP Tools (`mcp__ui-designer__*`)
+
+When the `ui-designer` MCP server is available, prefer calling these tools directly over manual subprocess invocations.
+
+| Tool | When to Call |
+|------|--------------|
+| `generate_rules` | Generate design rules for a style+palette+archetype combo → `.cursorrules` or JSON |
+| `list_options` | List all available systems, palettes, archetypes, hybrids |
+| `validate_combo` | Check that a style+palette+hybrid is valid before generating |
+| `get_reference` | Pull full content of any reference doc (ant-design, accessibility, etc.) |
+| `palette_fetch` | Fetch live palettes from Color Hunt (trending/popular/theme/query) |
+| `palette_convert` | Convert palette JSON to CSS / Tailwind / SCSS / Figma / Android / Swift |
+| `brand_fetch_design_md` | Download DESIGN.md for a real brand (stripe, vercel, notion, claude…) |
+| `brand_list` | List all 328+ brands by category |
+
+**Full workflow with MCP:**
+1. `list_options` → pick system + palette
+2. `validate_combo` → confirm valid
+3. Optionally `palette_fetch` for live colors OR `brand_fetch_design_md` for brand reference
+4. `generate_rules` → get structured rule JSON
+5. `get_reference` for any deep-dive needed (accessibility, tokens, responsive, etc.)
 
 ## Operating Rules
 
@@ -14,6 +36,7 @@ Use this skill when the user needs interface direction, design-system selection,
 - Choose the best system for the job. Use a combination only when there is a clear reason and the roles of each system are explicit.
 - Prefer predictable, reusable patterns over novelty when the product is operational or workflow-heavy.
 - Avoid generic AI aesthetics: no default purple/indigo gradients, no glossy filler, no emoji in functional UI.
+- When the user asks to clone/match/reference a real brand's look, use `brand_fetch_design_md` (MCP) or `npx getdesign@latest add <brand>` (CLI). See `references/getdesign-md.md`.
 - When building with Tailwind CSS, follow `references/tailwind-integration.md`.
 - Always check `references/accessibility.md` before finalizing any design.
 - All animations must respect `prefers-reduced-motion`. See `references/motion-design.md`.
@@ -43,16 +66,30 @@ Use this skill when the user needs interface direction, design-system selection,
 
 ## Workflow
 
+### Standard (system-first)
+
 1. Identify product type, platform, UX density
 2. Score candidates via `QUICK_REFERENCE.md`
 3. Choose system or hybrid
-4. Open matching `references/<system>.md`
+4. Open matching `references/<system>.md` (or call `get_reference` via MCP)
 5. Open matching `assets/archetypes/<page-type>.md` if page type known
 6. Apply tokens from `references/design-tokens.md`
 7. Follow component patterns from `references/component-patterns.md`
 8. Apply responsive layout from `references/responsive-layout.md`
 9. Validate accessibility from `references/accessibility.md`
 10. Add motion from `references/motion-design.md`
+
+### Brand Reference (DESIGN.md-first)
+
+When user wants to match a real brand's look:
+
+1. Call `brand_fetch_design_md({ brand })` (MCP) OR run `npx getdesign@latest add <brand>` (CLI)
+2. Parse DESIGN.md front matter — extract colors, typography, rounded, spacing, components
+3. Map brand aesthetic to closest structural system (see table in `references/getdesign-md.md`)
+4. Open that system's reference file for layout/behavior patterns
+5. Override all visual tokens with DESIGN.md values
+6. Note any Known Gaps from DESIGN.md and surface them to user
+7. Validate accessibility from `references/accessibility.md`
 
 ## Reference Files
 
@@ -65,6 +102,7 @@ Use this skill when the user needs interface direction, design-system selection,
 - `references/accessibility.md` — WCAG AA, focus, ARIA, keyboard nav, semantic HTML
 - `references/motion-design.md` — Durations, easing, animations, reduced motion
 - `references/tailwind-integration.md` — Tailwind config, component classes, dark mode
+- `references/getdesign-md.md` — DESIGN.md brand reference system (328+ brands via getdesign.md)
 
 ### System References
 - `references/ant-design.md`
