@@ -13,21 +13,39 @@ When the `ui-designer` MCP server is available, prefer calling these tools direc
 
 | Tool | When to Call |
 |------|--------------|
-| `generate_rules` | Generate design rules for a style+palette+archetype combo → `.cursorrules` or JSON |
+| **`evaluate_style`** | **FIRST STEP** — Score styles against product context, returns ranked recommendations + workflow |
 | `list_options` | List all available systems, palettes, archetypes, hybrids |
 | `validate_combo` | Check that a style+palette+hybrid is valid before generating |
+| `generate_rules` | Generate design rules for a style+palette+archetype combo → `.cursorrules` or JSON |
+| `generate_tailwind_config` | Generate ready-to-use tailwind.config.js for a style+palette |
+| `generate_template` | Generate full HTML starter page for style+palette+archetype |
+| `get_component` | Get production-ready component snippet (button, card, nav, hero, etc.) |
+| `get_cross_cutting_rules` | Get standalone rules (accessibility, motion, icons, tokens, responsive) |
+| `generate_palette_variants` | Generate light/dark/high-contrast variants from hex colors |
+| `export_project` | Export full project scaffold (config + HTML + components) |
 | `get_reference` | Pull full content of any reference doc (ant-design, accessibility, etc.) |
 | `palette_fetch` | Fetch live palettes from Color Hunt (trending/popular/theme/query) |
 | `palette_convert` | Convert palette JSON to CSS / Tailwind / SCSS / Figma / Android / Swift |
 | `brand_fetch_design_md` | Download DESIGN.md for a real brand (stripe, vercel, notion, claude…) |
 | `brand_list` | List all 328+ brands by category |
+| `list_installed_skills` | Detect installed skill submodules |
 
-**Full workflow with MCP:**
-1. `list_options` → pick system + palette
-2. `validate_combo` → confirm valid
-3. Optionally `palette_fetch` for live colors OR `brand_fetch_design_md` for brand reference
-4. `generate_rules` → get structured rule JSON
-5. `get_reference` for any deep-dive needed (accessibility, tokens, responsive, etc.)
+**MANDATORY Workflow with MCP:**
+
+```
+1. evaluate_style({ description: "..." })  ← ALWAYS START HERE
+   → returns: recommended style, palette, archetype, workflow steps
+
+2. validate_combo({ style, palette })      ← confirm valid
+3. brand_fetch_design_md({ brand })        ← if brand reference needed
+4. generate_rules({ style, palette, archetype })  ← get design rules
+5. get_reference({ name })                 ← deep-dive as needed
+6. generate_template({ style, palette, archetype })  ← starter HTML
+7. get_component({ component, style })     ← individual components
+8. export_project({ style, palette, archetype })     ← full scaffold
+```
+
+**NEVER skip step 1.** The evaluation engine scores all 17 styles against your product context to find the best match. Do not default to a style without evaluation.
 
 ## Operating Rules
 
