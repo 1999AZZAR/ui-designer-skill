@@ -7,9 +7,9 @@ description: Choose the best UI design system, or a deliberate combination of sy
 
 Use this skill when the user needs interface direction, design-system selection, theming, or visual/product UX structure before or during implementation.
 
-## MCP Tools (`mcp__ui-designer__*`)
+## MCP Tools (`mcp__the-designer__*`)
 
-When the `ui-designer` MCP server is available, prefer calling these tools directly over manual subprocess invocations.
+When the `the-designer` MCP server is available, prefer calling these tools directly over manual subprocess invocations.
 
 | Tool | When to Call |
 |------|--------------|
