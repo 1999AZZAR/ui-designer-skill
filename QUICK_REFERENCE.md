@@ -23,6 +23,24 @@ Use this file as the main map. Do not pick a system from visual taste alone. Sco
 2. **Prototype**: High-fidelity implementation with interaction and logic.
 3. **Test**: Validate against accessibility, responsiveness, and user goals.
 
+## What Makes a Good Design?
+- **Emphasis**: Highlight the most important elements.
+- **Alignment and Balance**: Professional look through grid alignment.
+- **Contrast**: Clear distinctions between elements.
+- **Consistency and Repetition**: Familiarity through repeated patterns.
+- **White Space**: Let the design breathe, avoid overload.
+- **Hierarchy**: Clear visual path from most to least important.
+- **Unity and Cohesion**: Everything belongs to one system.
+
+## Beginner Mistakes (Avoid)
+- Skipping the design flow.
+- Excessive complexity or detail.
+- Excessive color use.
+- Lack of visual hierarchy.
+- No clear purpose for elements.
+- Poor usability or cramped spacing.
+- Prioritizing aesthetics over usability.
+
 ## Scoring Rubric
 
 Score each candidate from `1` to `5` on:

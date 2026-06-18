@@ -65,6 +65,10 @@ When the `the-designer` MCP server is available, prefer calling these tools dire
   - **1. Wireframe**: Focus on structure and hierarchy.
   - **2. Prototype**: Functional implementation.
   - **3. Test**: Accessibility and responsiveness validation.
+- **MANDATORY: Good Design Criteria**
+  - Emphasis; Alignment/Balance; Contrast; Consistency/Repetition; White Space; Hierarchy; Unity/Cohesion.
+- **FORBIDDEN: Beginner Mistakes**
+  - Skipping flow; Excessive complexity/detail/color; No hierarchy/purpose; Poor usability/spacing; Aesthetic > Usability.
 - **CRITICAL: Icon Sources** — NEVER use icons from unapproved sources. Only these 6 are allowed: Phosphor, Font Awesome, Google Material Symbols, Tabler, Lucide, Heroicons. See `references/icon-guide.md`.
 - Choose systems from product context first, not visual mood first.
 - Choose the best system for the job. Use a combination only when there is a clear reason and the roles of each system are explicit.
