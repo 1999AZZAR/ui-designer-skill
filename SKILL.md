@@ -58,6 +58,13 @@ When the `the-designer` MCP server is available, prefer calling these tools dire
 
 ## Operating Rules
 
+- **MANDATORY: Core Design Principles**
+  - **UI**: Structural, clear, and tidy; Clear and understandable; Consistent and coherent; Purposeful and relevant; Adaptable and responsive.
+  - **UX**: Intuitive and user-friendly; Easy to learn and use; Consistent around the UI; Accessible and inclusive; Efficient and effective.
+- **MANDATORY: Design Flow**
+  - **1. Wireframe**: Focus on structure and hierarchy.
+  - **2. Prototype**: Functional implementation.
+  - **3. Test**: Accessibility and responsiveness validation.
 - **CRITICAL: Icon Sources** — NEVER use icons from unapproved sources. Only these 6 are allowed: Phosphor, Font Awesome, Google Material Symbols, Tabler, Lucide, Heroicons. See `references/icon-guide.md`.
 - Choose systems from product context first, not visual mood first.
 - Choose the best system for the job. Use a combination only when there is a clear reason and the roles of each system are explicit.

@@ -2,6 +2,27 @@
 
 Use this file as the main map. Do not pick a system from visual taste alone. Score candidates from product needs, then open only the best matching reference file or files.
 
+## Core Design Principles
+
+### UI Principles
+1. **Structural, Clear, and Tidy**: Logical hierarchy, alignment, and grouping.
+2. **Clear and Understandable**: Purposeful elements, identifiable functions.
+3. **Consistent and Coherent**: Shared patterns and styles across the UI.
+4. **Purposeful and Relevant**: User-goal focused, no fluff.
+5. **Adaptable and Responsive**: Seamless across devices and orientations.
+
+### UX Principles
+1. **Intuitive and User-Friendly**: Natural interactions, follows user mental models.
+2. **Easy to Learn and Use**: Low cognitive load, clear navigation.
+3. **Consistent around the UI**: Predictable behavior across all surfaces.
+4. **Accessible and Inclusive**: Works for everyone, regardless of ability.
+5. **Efficient and Effective**: Optimized for speed and accuracy.
+
+## Design Flow
+1. **Wireframe**: Establish structure, hierarchy, and flow before visual polish.
+2. **Prototype**: High-fidelity implementation with interaction and logic.
+3. **Test**: Validate against accessibility, responsiveness, and user goals.
+
 ## Scoring Rubric
 
 Score each candidate from `1` to `5` on:
