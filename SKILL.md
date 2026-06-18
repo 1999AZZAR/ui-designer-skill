@@ -1,6 +1,6 @@
 ---
 name: ui-designer
-description: Choose the best UI design system, or a deliberate combination of systems, for web or app interfaces. Use for dashboards, admin panels, internal tools, CMS, SaaS, websites, component theming, color systems, and frontend visual direction across Ant Design, Fluent, Carbon, Atlassian, Apple HIG, Material You, Polaris, Minimalism, Glassmorphism, Neo-Brutalism, Swiss, Swiss-Archival, and related systems. Also supports brand-cloning via getdesign.md DESIGN.md files (328+ real-world brands: Stripe, Vercel, Linear, Notion, Tesla, Spotify, etc.).
+description: "Choose the best UI design system, or a deliberate combination of systems, for web or app interfaces. Use for dashboards, admin panels, internal tools, CMS, SaaS, websites, component theming, color systems, and frontend visual direction across Ant Design, Fluent, Carbon, Atlassian, Apple HIG, Material You, Polaris, Minimalism, Glassmorphism, Neo-Brutalism, Swiss, Swiss-Archival, and related systems. Also supports brand-cloning via getdesign.md DESIGN.md files (328+ real-world brands: Stripe, Vercel, Linear, Notion, Tesla, Spotify, etc.)."
 entry: SKILL.md
 resources:
   guide: QUICK_REFERENCE.md
