@@ -2,24 +2,41 @@
 
 Mobile-first grid and layout patterns for all screen sizes.
 
+## Hard Floor — Non-Negotiable
+
+Every output must render flawlessly at all four mobile widths. These are hard requirements, not a wish list:
+
+1. **No horizontal scroll** — `overflow-x: clip` on both `html` and `body`. Never use `overflow-x: hidden`.
+2. **No two-line clickable text** — buttons, nav links, CTAs must fit on one line at 320px.
+3. **Image-bearing grid tracks** — use `minmax(0, 1fr)`, never bare `1fr`.
+4. **Display headers wrap safely** — use `overflow-wrap: anywhere; min-width: 0` on display headings.
+5. **Section heads collapse to single column** on mobile across every theme variant.
+6. **Minimum touch target**: 44x44px (WCAG 2.5.5).
+7. **Spacing between touch targets**: 8px minimum.
+
+## Breakpoints
+
+| Name | Value | Target |
+|------|-------|--------|
+| Mobile S | 320px | Small phones |
+| Mobile M | 375px | iPhone |
+| Mobile L | 414px | Large phones |
+| Tablet | 768px | iPad / tablet |
+| Desktop | 1024px | Desktop |
+| Wide | 1280px+ | Large desktop |
+
 ## Grid System
 
-### 12-Column Grid (Default)
+### 4-8-12 Column Grid
 ```css
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 24px;
 }
 ```
 
-**Column widths by breakpoint**:
+**Column counts by breakpoint**:
 | Breakpoint | Columns | Gutter | Margin |
 |------------|---------|--------|--------|
 | Mobile (<640px) | 4 | 16px | 16px |
@@ -27,7 +44,7 @@ Mobile-first grid and layout patterns for all screen sizes.
 | Desktop (1024px) | 12 | 24px | 32px |
 | Wide (1280px+) | 12 | 32px | auto |
 
-### Grid Usage Examples
+### Grid Usage
 ```html
 <!-- Full width -->
 <div class="col-span-12">...</div>
@@ -35,40 +52,35 @@ Mobile-first grid and layout patterns for all screen sizes.
 <!-- Half -->
 <div class="col-span-6">...</div>
 
-<!-- Third -->
-<div class="col-span-4">...</div>
-
 <!-- Sidebar + Content -->
 <div class="col-span-3">Sidebar</div>
 <div class="col-span-9">Content</div>
 
-<!-- Card grid: 3 columns -->
-<div class="col-span-4">Card 1</div>
-<div class="col-span-4">Card 2</div>
-<div class="col-span-4">Card 3</div>
+<!-- Card grid -->
+<div class="col-span-4">Card</div>
+<div class="col-span-4">Card</div>
+<div class="col-span-4">Card</div>
 ```
-
----
 
 ## Breakpoint Behavior
 
 ### Mobile (< 640px)
-- Single column layout
-- Stack all elements vertically
+- Single column layout — all elements stack vertically
 - Full-width inputs and buttons
-- Bottom navigation or hamburger menu
+- Bottom tab bar or hamburger menu
 - Hide sidebar (use drawer)
-- Reduce font sizes 10-15%
-- Simplify tables → card layout
+- Section heads collapse to single column
+- Reduce font sizes: H1 → clamp(1.75rem, 5vw, 2rem)
+- Tables become stacked card layouts
+- Overflow-wrap: anywhere on all headings
 
-### Tablet (640px – 1023px)
+### Tablet (640px — 1023px)
 - 2-column layouts possible
-- Sidebar optional (collapsible)
+- Sidebar: collapsed or overlay
 - Cards: 2 per row
 - Forms: 2 columns for related fields
-- Tables: horizontal scroll
 
-### Desktop (1024px – 1279px)
+### Desktop (1024px — 1279px)
 - Full 12-column grid
 - Sidebar always visible
 - Cards: 3-4 per row
@@ -79,122 +91,75 @@ Mobile-first grid and layout patterns for all screen sizes.
 - Max-width container (1280px)
 - More breathing room
 - Cards: 4+ per row
-- Dense layouts acceptable
-
----
 
 ## Layout Patterns
 
 ### Admin Dashboard
 ```
-┌──────────┬────────────────────────────┐
-│          │  Header/Breadcrumb          │
-│ Sidebar  ├────────────────────────────│
-│ (fixed)  │                            │
-│          │  Content Area              │
-│          │                            │
-│          │                            │
-│          ├────────────────────────────│
-│          │  Footer (optional)         │
-└──────────┴────────────────────────────┘
+┌──────────┬──────────────────────────────┐
+│          │  Header / Breadcrumb         │
+│ Sidebar  ├──────────────────────────────│
+│ (fixed)  │  Content Area                │
+│          │                              │
+└──────────┴──────────────────────────────┘
 ```
-- Sidebar: fixed, 240px / 64px collapsed
+- Sidebar: fixed, 240px / 64px collapsed (overlay on mobile)
 - Content: scrollable, max-width 1280px
 
 ### Marketing Landing
 ```
-┌────────────────────────────────────────┐
-│  Top Nav (fixed/sticky)               │
-├────────────────────────────────────────┤
-│  Hero Section (full-width)            │
-├────────────────────────────────────────┤
-│  Features (3-col grid)                │
-├────────────────────────────────────────┤
-│  CTA Section                          │
-├────────────────────────────────────────┤
-│  Footer                               │
-└────────────────────────────────────────┘
+┌──────────────────────────────────────────┐
+│  Top Nav (sticky)                        │
+├──────────────────────────────────────────┤
+│  Hero Section (full-width)               │
+├──────────────────────────────────────────┤
+│  Features (responsive grid)              │
+├──────────────────────────────────────────┤
+│  CTA Section                             │
+├──────────────────────────────────────────┤
+│  Footer                                  │
+└──────────────────────────────────────────┘
 ```
 
-### Content/App
+### Content / App
 ```
-┌────────────────────────────────────────┐
-│  Top Bar (64px)                        │
-├────────────────────────────────────────┤
-│                                        │
-│  Main Content (scrollable)             │
-│                                        │
-└────────────────────────────────────────┘
+┌──────────────────────────────────────────┐
+│  Top Bar (64px)                          │
+├──────────────────────────────────────────┤
+│  Main Content (scrollable)               │
+└──────────────────────────────────────────┘
 ```
-- Mobile: Bottom tab bar
+- Mobile: Bottom tab bar (max 5 items)
 - Desktop: Top navigation
 
----
+## Container Queries
 
-## Container Queries (Modern)
-
-Prefer container queries over media queries for component-level responsiveness:
-
+Prefer container queries for component-level responsiveness:
 ```css
 .card-container {
   container-type: inline-size;
 }
 
 @container (min-width: 400px) {
-  .card {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-@container (min-width: 600px) {
-  .card {
-    grid-template-columns: 200px 1fr;
-  }
+  .card { display: flex; }
 }
 ```
-
----
-
-## Responsive Utilities
-
-### Show/Hide Classes
-| Class | Mobile | Tablet | Desktop |
-|-------|--------|--------|---------|
-| `.hidden-mobile` | hidden | visible | visible |
-| `.hidden-tablet` | visible | hidden | visible |
-| `.hidden-desktop` | visible | visible | hidden |
-| `.visible-mobile` | visible | hidden | hidden |
-| `.visible-tablet` | hidden | visible | hidden |
-| `.visible-desktop` | hidden | hidden | visible |
-
-### Responsive Spacing
-| Class | Mobile | Tablet | Desktop |
-|-------|--------|--------|---------|
-| `.p-responsive` | 16px | 24px | 32px |
-| `.gap-responsive` | 16px | 24px | 32px |
-| `.m-responsive` | 16px | 24px | 32px |
-
----
 
 ## Responsive Typography
 
 | Token | Mobile | Tablet | Desktop |
 |-------|--------|--------|---------|
-| H1 | 28px | 36px | 48px |
-| H2 | 24px | 30px | 36px |
-| H3 | 20px | 24px | 30px |
-| Body | 14px | 16px | 16px |
-| Small | 12px | 14px | 14px |
-
----
+| H1 | clamp(1.75rem, 5vw, 2.5rem) | 2.5rem | 3rem+ |
+| H2 | 1.5rem | 1.75rem | 2rem |
+| Body | 0.875rem | 1rem | 1rem |
 
 ## Touch Targets
 
-Minimum touch target sizes (WCAG 2.5.5):
-- **Minimum**: 44x44px
-- **Recommended**: 48x48px
-- **Spacing between targets**: 8px minimum
+| Rule | Value |
+|------|-------|
+| Minimum size | 44x44px |
+| Recommended | 48x48px |
+| Spacing between | 8px minimum |
 
 ```css
 .touch-target {
@@ -206,36 +171,39 @@ Minimum touch target sizes (WCAG 2.5.5):
 }
 ```
 
----
-
 ## Mobile-Specific Patterns
 
 ### Bottom Navigation
 ```
-┌─────────┬─────────┬─────────┬─────────┬─────────┐
-│  Home   │ Search  │  Plus   │  Alerts │  Profile │
-│   🏠    │   🔍    │    +    │   🔔    │    👤    │
-└─────────┴─────────┴─────────┴─────────┴─────────┘
+┌────────┬────────┬────────┬────────┬────────┐
+│  Home  │ Search │  Plus  │ Alerts │ Profile│
+└────────┴────────┴────────┴────────┴────────┘
 ```
 - 5 items max
 - Active state: filled icon + label
 - Safe area padding for notch devices
 
-### Pull to Refresh
-- Overscroll reveals spinner
-- Release triggers refresh
-- Show timestamp of last update
-
-### Swipe Actions
-- Swipe left: Delete/archive
-- Swipe right: Mark as read/favorite
-- Reveal actions gradually, don't hide content
-
----
+### Tables → Card Layout on Mobile
+```css
+@media (max-width: 640px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead { display: none; }
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+  }
+}
+```
 
 ## Safe Areas
 
-Account for device-specific safe areas:
 ```css
 .content {
   padding-top: env(safe-area-inset-top);
@@ -244,8 +212,6 @@ Account for device-specific safe areas:
   padding-right: env(safe-area-inset-right);
 }
 ```
-
----
 
 ## Responsive Images
 

@@ -2,54 +2,84 @@
 
 Universal component patterns applicable across all design systems. Adapt to the chosen system's tokens and spacing.
 
+## 8-State Discipline
+
+Every interactive component MUST ship code for all 8 states. This is mandatory, not advisory.
+
+| # | State | Trigger | Implementation |
+|---|-------|---------|----------------|
+| 1 | **default** | Initial render | Resting visual |
+| 2 | **hover** | Mouse over | `:hover` pseudo-class |
+| 3 | **focus** | Keyboard focus | `:focus-visible` with visible ring |
+| 4 | **active** | Pressed | `:active` pseudo-class |
+| 5 | **disabled** | `disabled` attribute | `opacity: 0.5; cursor: not-allowed; pointer-events: none` |
+| 6 | **loading** | Processing | `data-state="loading"`, replace label with spinner/ellipsis, disable interaction |
+| 7 | **error** | Validation/request failure | `data-state="error"`, red accent, error message |
+| 8 | **success** | Completed | `data-state="success"`, green accent, checkmark |
+
+**State demo**: Use `generate_8state_component` (the-designer MCP) to produce a standalone preview page with all 8 states rendered simultaneously.
+
+**State CSS pattern**:
+```css
+.btn:hover, .btn.is-hover { background: var(--color-paper-3); }
+.btn:focus-visible, .btn.is-focus { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn:active, .btn.is-active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+.btn[data-state="loading"] { cursor: wait; }
+.btn[data-state="error"] { border-color: var(--color-accent); }
+.btn[data-state="success"] { border-color: var(--color-accent-2); }
+```
+
 ## Forms
 
 ### Input Field Structure
 ```
-Label (optional helper text)
+Label
 [ Input field                    ]
 Helper text / Error message
 ```
 
-**States**: default, hover, focus, disabled, error, success
+**States**: default, hover, focus-visible, active, disabled, loading, error, success
 
 **Required patterns**:
-- Label above input, not placeholder-only
+- Label above input, not placeholder-only (placeholder-only is an anti-pattern)
 - Error message below input with color and icon
 - Helper text for complex fields
-- Required fields: `*` after label or "(Required)" text
-- Max-width: 480px for single-column, 320px for multi-column
+- Required fields: `*` after label
+- Max-width: 480px for single-column
 
-**Input heights**: Small 32px, Medium 40px, Large 48px
+### Input heights
+| Size | Height |
+|------|--------|
+| Small | 32px |
+| Medium | 40px |
+| Large | 48px |
 
 ### Form Layout
 ```
 Single Column (preferred):
 [ Full-width field              ]
 [ Full-width field              ]
-[ Half field    ] [ Half field  ]
 
 Two Column (dense admin):
 [ Label ] [ Input              ]
 [ Label ] [ Input              ]
 ```
 
-**Spacing**: 16–24px between field groups, 8px between label and input
+**Spacing**: 16-24px between field groups, 8px between label and input
 
 ### Validation
 - Inline validation on blur, not on every keystroke
-- Error state: red border + icon + message below
-- Success state: green border or checkmark (optional)
-- Never rely on color alone — always include text/icon
-
----
+- Error state: red accent + message below
+- Never rely on color alone — always include text
+- Focus ring must appear instantly (no animation)
 
 ## Tables
 
 ### Structure
 ```
 [ Search/Filter bar                    ]
-[ Action bar (bulk actions, export)    ]
+[ Action bar (bulk actions)            ]
 +---+----------+----------+----------+
 | # | Column A | Column B | Column C |  ← Header (sticky)
 +---+----------+----------+----------+
@@ -65,13 +95,8 @@ Two Column (dense admin):
 - Dates: center or left-aligned
 - Actions: right-aligned, icon buttons
 
-**Row density**: Compact (40px), Default (48px), Comfortable (56px)
-
 **Empty state**: Illustration + message + action button
-
-**Loading state**: Skeleton rows or spinner overlay
-
----
+**Loading state**: Skeleton rows, never empty page during load
 
 ## Navigation
 
@@ -82,28 +107,19 @@ Logo
 Section Header
   Nav Item (icon + label)
   Nav Item
-    Nested Item
-    Nested Item
-──────────
-Section Header
-  Nav Item
 ──────────
 User/Settings (bottom)
 ```
 
 **Width**: 240px (expanded), 64px (collapsed icon-only)
-
-**Active state**: Background highlight + bold text + indicator (left border or dot)
-
-**Hover state**: Subtle background change
+**States**: default, hover, active, focus-visible
 
 ### Top Navigation (Marketing/SaaS)
 ```
-[ Logo ] [ Nav Item ] [ Nav Item ] [ Nav Item ]    [ CTA ]
+[ Logo ] [ Nav ] [ Nav ] [ Nav ]   [ CTA ]
 ```
 
-**Height**: 56–72px
-
+**Height**: 56-72px
 **Mobile**: Hamburger menu, slide-out drawer
 
 ### Tab Navigation
@@ -113,10 +129,7 @@ User/Settings (bottom)
 Content area
 ```
 
-**Active**: Underline or filled background
-**Disabled**: Muted text, no pointer events
-
----
+**Active**: Underline or filled background. **Disabled**: Muted text.
 
 ## Modals / Dialogs
 
@@ -126,7 +139,6 @@ Content area
 |  Title                     [X]   |
 |-----------------------------------|
 |  Body content                    |
-|                                  |
 |-----------------------------------|
 |            [ Cancel ] [ Confirm ]|
 +-----------------------------------+
@@ -135,64 +147,59 @@ Content area
 **Widths**: Small 400px, Medium 560px, Large 720px, Full 90vw
 
 **Behavior**:
-- Backdrop: dark overlay, click to dismiss (if not critical)
+- Backdrop: dark overlay, click to dismiss
 - Focus trap: Tab cycles within modal only
 - ESC key closes (if dismissible)
 - Return focus to trigger element on close
 - Scroll lock on body when open
-
-**Actions placement**: Right-aligned (primary rightmost), or split (cancel left, confirm right)
-
----
+- Modal transitions: opacity + translateY, animate transform/opacity only
 
 ## Cards
 
 ### Standard Card
 ```
 +-----------------------------------+
-|  [ Optional media/image ]         |
-|-----------------------------------|
 |  Title                           |
 |  Description text                |
-|                                   |
-|  [ Action 1 ]     [ Action 2 ]   |
+|  [ Action ]     [ Action ]       |
 +-----------------------------------+
 ```
 
+**States**: default, hover (subtle lift via translateY), focus-visible within
 **Variants**: elevated (shadow), outlined (border), filled (background)
-
-**Spacing**: 16–24px padding internally
-
-**Border-radius**: Match system (8–16px typical)
-
----
+**Spacing**: 16-24px padding internally
 
 ## Buttons
 
 ### Hierarchy
 1. **Primary**: Filled, high contrast — main action per screen
 2. **Secondary**: Outlined or ghost — secondary actions
-3. **Tertiary/Text**: No border — low-emphasis actions
-4. **Danger**: Red filled — destructive actions
+3. **Tertiary/Text**: No border — low-emphasis
+4. **Danger**: Red filled — destructive
 
 ### Sizes
 | Size | Height | Padding | Font Size |
 |------|--------|---------|-----------|
-| Small | 32px | 8px 12px | 12–13px |
+| Small | 32px | 8px 12px | 12-13px |
 | Medium | 40px | 10px 16px | 14px |
 | Large | 48px | 12px 24px | 16px |
 
-### States
-- Default → Hover → Active → Focus → Disabled → Loading
-- Loading: replace label with spinner, disable interaction
-- Disabled: 40% opacity, `not-allowed` cursor
+### States (mandatory 8)
+| State | Visual | Interaction |
+|-------|--------|-------------|
+| default | Resting fill | — |
+| hover | -2px translateY or darker fill | `transition: transform var(--dur-fast) var(--ease-out)` |
+| focus-visible | 2px ring at --color-focus | Instant appearance, no animation |
+| active | translateY(1px) or scale(0.97) | `transition: transform 0.1s` |
+| disabled | 50% opacity | `cursor: not-allowed`, no pointer events |
+| loading | Spinner + "Working..." text | `pointer-events: none` |
+| error | Red accent border + shake? | Show error message below |
+| success | Green accent + checkmark | Brief indication, then revert |
 
 ### Icon Buttons
-- Square aspect ratio (same height/width as button size)
+- Square aspect ratio (same height/width)
 - Icon-only: must have `aria-label`
 - Icon + label: icon on left, 8px gap
-
----
 
 ## Toasts / Notifications
 
@@ -201,15 +208,13 @@ Content area
 [ Icon ]  Title/Message                    [ Close ]
 ```
 
-**Positions**: Top-right (default), bottom-right, top-center
-
+**Positions**: Top-right (default)
 **Variants**: Success (green), Warning (amber), Error (red), Info (blue)
-
-**Auto-dismiss**: 4–6 seconds for success/info, manual dismiss for errors
-
+**Auto-dismiss**: 4-6 seconds for success/info, manual dismiss for errors
 **Stacking**: New toasts stack below existing, max 3 visible
 
----
+**Animate**: transform + opacity only. Slide in from right.
+**Never**: bounce or overshoot for toast entrance.
 
 ## Dropdowns / Selects
 
@@ -226,65 +231,46 @@ Content area
 **Behavior**:
 - Open on click or Enter/Space
 - Arrow keys navigate options
-- Type-ahead search for long lists
 - Close on Escape or click outside
-- Max-height: 240–320px with scroll
-
-### Multi-Select
-- Checkbox or tag-based selection
-- Show selected count in trigger
-- Clear all option available
-
----
+- Max-height: 240-320px with scroll
+- Animate: opacity + translateY only
 
 ## Breadcrumbs
-
 ```
 Home / Section / Sub-section / Current Page
 ```
 
-**Separator**: `/` or chevron icon
-**Last item**: Bold or plain text (not a link)
-**Mobile**: Truncate middle items, show `...`
-
----
+**Separator**: `/` or chevron icon. **Last item**: Plain text (not a link).
 
 ## Pagination
-
 ```
 [ ← Previous ]  1  2  3  ...  10  [ Next → ]
 ```
 
-**Variants**: Numbered, simple (prev/next), load-more button
-
-**Active page**: Filled background or bold
-
----
+**States**: default, hover, active, disabled (for first/last page bounds)
 
 ## Empty States
-
 ```
-[ Illustration / Icon ]
+[ Icon ]
 
 Title: "No results found"
 Description: "Try adjusting your filters or search terms."
 [ Action Button ]
 ```
 
-**Always include**: Title + description + primary action
-
----
+**Always include**: Title + description + primary action.
 
 ## Loading States
 
-| Pattern | When to Use |
-|---------|-------------|
+| Pattern | When |
+|---------|------|
 | Skeleton screen | Content loading (cards, tables, profiles) |
-| Spinner | Short operations (form submit, file upload) |
-| Progress bar | Known-duration operations (upload, install) |
-| Dots/wave | Indeterminate waits |
+| Spinner | Short operations |
+| Progress bar | Known-duration operations |
+| Dots | Indeterminate waits |
 
 **Rules**:
 - Skeleton mirrors actual content layout
 - Never show empty page during load
-- Minimum 300ms before showing loading state (avoid flash)
+- Minimum 300ms before showing loading state
+- Animate skeleton via CSS `@keyframes shimmer` with `background-position`
