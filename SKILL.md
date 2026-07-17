@@ -34,6 +34,12 @@ Use this skill when the user needs interface direction, design-system selection,
 | `generate_palette_variants` | Generate light/dark/high-contrast variants from hex colors |
 | `export_project` | Export full project scaffold |
 
+### Ellis UI Templates (Bespoke Systems)
+| Tool | When to Call |
+|------|--------------|
+| **`list_ellis_ui_designs`** | List all 24 bespoke Ellis UI design templates (e.g., Swiss Archival, Vintage Airmail, Brutalist). |
+| **`get_ellis_ui_template`** | Fetch the HTML structure and CSS rules for a specific Ellis UI design system. Use this as a structural foundation for highly thematic, anti-slop designs. |
+
 ### Theme & Token System
 | Tool | When to Call |
 |------|--------------|
