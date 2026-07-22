@@ -66,6 +66,7 @@ Use this skill when the user needs interface direction, design-system selection,
 | Tool | When to Call |
 |------|--------------|
 | `list_installed_skills` | Detect installed skill submodules |
+| **`generate_motion_snippet`** | Generate a ready-to-paste **anime.js v4** snippet (CDN + code + usage hint) for any animation category (`entrance`, `micro`, `stagger`, `scroll`, `loader`, `transition`, `counter`, `typewriter`) matched to the current design style's easing/duration character. All snippets include `prefers-reduced-motion` guards. Call after `generate_template` or `get_component` whenever motion is needed. |
 
 ## MANDATORY Workflow (v2)
 
